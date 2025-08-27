@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react"
 import apiKey from "../../public/apiKey";
+import type { IGame } from "../interface";
 
 
 
 
 export default function SimilarGames({ id }: { id: string }) {
-    const [similarGames, setSimilarGames] = useState([])
+    const [similarGames, setSimilarGames] = useState<IGame[]>([])
     useEffect(() => {
             let isReq = false
-       const similarGamesAPI = () => fetch(`https://api.gamebrain.co/v1/games/:id`, {
+       const similarGamesAPI = () => fetch(`https://api.gamebrain.co/v1/games/${id}/similar`, {
             method: 'GET',
              headers: {
                  'x-api-key': apiKey
@@ -30,6 +31,6 @@ export default function SimilarGames({ id }: { id: string }) {
     console.log(similarGames)
     
     return (
-        <h1>{id }</h1>
+        <h1>{similarGames.map((similarGame) => (<li>{similarGame.name}</li>)) }</h1>
     )
 }

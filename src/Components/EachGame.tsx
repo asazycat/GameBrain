@@ -6,7 +6,7 @@ import type { IGame } from "../interface"
 
 
 export default function EachGame() {
-    const { id } = useParams() 
+    const { id } = useParams()
     const [game, setGame] = useState<IGame>({
         id: 0,
     year: 0,
@@ -25,10 +25,9 @@ export default function EachGame() {
     short_description: ''
     })
     useEffect(() => {
-     
-      
-         
-          let isReq = false
+       
+        
+        let isReq = false
        const gameDetail = () => fetch(`https://api.gamebrain.co/v1/games/${id}`, {
             method: 'GET',
              headers: {
@@ -47,14 +46,14 @@ export default function EachGame() {
 
         return () => { isReq = true }
 }, [id]) 
-
+  console.log(document.URL)
 console.log(game)
     return (<>
         {id}
         <h1>{game.name}</h1>
         <p>{game.short_description}</p>
         <img src={game.image } alt={game.name}/>
-        <p>{game.rating.mean}, {game.rating.count}</p>
+        <p></p>
         <div>
         <SimilarGames id={id ?? ''} />
         </div>

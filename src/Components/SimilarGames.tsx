@@ -28,9 +28,9 @@ export default function SimilarGames({ id }: { id: string }) {
         return () => { isReq = true }
     }, [id])
 
-    console.log(similarGames)
+  
     
     return (
-        <h1>{similarGames.map((similarGame) => (<li>{similarGame.name}</li>)) }</h1>
+        <h1>{similarGames.map((similarGame) => (<li key={similarGame.id}>{similarGame.name}</li>)) }</h1>
     )
 }

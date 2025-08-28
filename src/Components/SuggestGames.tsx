@@ -33,7 +33,7 @@ export default function SuggestGames() {
     console.log(suggestedGames)
     return (
          <>
-              <h1>Suggest Games</h1>
+            
                 <label>Search</label><input type="text" onChange={e => setQuery(e.target.value)}></input>
          
          </>

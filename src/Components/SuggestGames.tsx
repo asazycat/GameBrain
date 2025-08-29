@@ -32,11 +32,11 @@ export default function SuggestGames() {
     
     console.log(suggestedGames)
     return (
-         <>
+         <div className="flex p-2 text-xl bg-white border-solid min-sm:border-2">
             
                 <label>Search</label><input type="text" onChange={e => setQuery(e.target.value)}></input>
          
-         </>
+         </div>
        
      )
 }

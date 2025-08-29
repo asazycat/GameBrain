@@ -44,19 +44,20 @@ export function SearchGames() {
     if (searchedGames.length !== 0) {
         return (
             <>
-                <div><label>Sort By: </label>
+                <div className="border-2 ">
+                    <label>Sort By: </label>
                     <select onChange={(e) => setSort(e.target.value)}>
                         <option value='computed_rating'> Computed Rating</option>
                         <option value='release_date'> Release Date</option>
                         <option value='price'>Price</option>
                     </select>
                </div>
-        <ul>
+                <ul className="max-sm:grid max-sm:gap-10 min-sm:grid min-sm:grid-cols-3 m-10">
                     {searchedGames.map((eachGame) => (
                         <EachSearchResult game={eachGame} key={eachGame.id}/>    
                     ))}
                 </ul>
-                </>
+            </>
         )
     } else {
         return (

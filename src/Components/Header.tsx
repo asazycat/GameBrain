@@ -1,14 +1,14 @@
 
-// import SuggestGames from "./SuggestGames";
+import SuggestGames from "./SuggestGames";
 
 import Navigation from "./Navigation";
 export default function Header() {
      
     return (
-        <header className="">
+        <header className="flex justify-between ">
             <Navigation/>
-            <div>
-                {/* <SuggestGames/> */}
+            <div className=" text-left size-fit">
+                <SuggestGames/>
             </div>
             </header>
     )

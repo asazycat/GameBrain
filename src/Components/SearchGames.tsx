@@ -44,7 +44,7 @@ export function SearchGames() {
     if (searchedGames.length !== 0) {
         return (
             <>
-                <div className="border-2 ">
+                <div className="border-2 bg-[#1C2B2D] text-white border-[#1c2b2d] p-3">
                     <label>Sort By: </label>
                     <select onChange={(e) => setSort(e.target.value)}>
                         <option value='computed_rating'> Computed Rating</option>

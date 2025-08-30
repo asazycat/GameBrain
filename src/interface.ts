@@ -15,3 +15,8 @@ export interface IGame {
     gameplay: string,
     short_description: string
 }
+
+export interface IRating {
+                mean: number,
+                count: number
+            }

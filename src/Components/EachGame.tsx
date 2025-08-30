@@ -46,10 +46,8 @@ export default function EachGame() {
 
         return () => { isReq = true }
 }, [id]) 
-  console.log(document.URL)
-console.log(game)
+
     return (<>
-        {id}
         <h1>{game.name}</h1>
         <p>{game.short_description}</p>
         <img src={game.image } alt={game.name}/>

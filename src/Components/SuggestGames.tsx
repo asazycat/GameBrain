@@ -38,7 +38,7 @@ export default function SuggestGames() {
                 <label className="hidden">Search</label><input type="text" onChange={e => setQuery(e.target.value) } placeholder='search'></input>
             <ul className="absolute top-10 bg-white  max-sm:w-full  max-sm:left-0">
                 {
-                    suggestedGames.map((element) => <li className="p-4"><Link to={`games/${element.id}`} >{element.name}</Link></li>)
+                    suggestedGames.map((element) => <li className="p-4" key={element.id}><Link to={`games/${element.id}`} >{element.name}</Link></li>)
                 }
              </ul>
          </div>

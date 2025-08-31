@@ -52,7 +52,7 @@ export function SearchGames() {
                         <option value='price'>Price</option>
                     </select>
                </div>
-                <ul className="max-sm:grid max-sm:gap-10 min-sm:grid min-sm:grid-cols-3 m-10">
+                <ul className="max-sm:grid max-sm:gap-10  min-sm:grid min-sm:grid-cols-4 m-10  min-sm:m-auto min-sm:mt-5 ">
                     {searchedGames.map((eachGame) => (
                         <EachSearchResult game={eachGame} key={eachGame.id}/>    
                     ))}

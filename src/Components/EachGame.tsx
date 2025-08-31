@@ -50,7 +50,7 @@ export default function EachGame() {
 }, [id]) 
 
     return (
-        <div className="max-sm:flex max-sm:flex-col-reverse mt-5">
+        <div className="max-sm:flex max-sm:flex-col-reverse mt-5 min-sm:flex min-sm:flex-col-reverse">
             <div className="border-[#284246] bg-[#284246] text-white font-mono ">   
                 <h1 className="max-sm:text-3xl max-sm:p-5 max-sm:text-center">{game.name}</h1>
                 <p className="max-sm:p-2 flex">{(game.rating.mean * 5).toFixed(2) } <Rating rating={game.rating} /> </p>
@@ -59,12 +59,12 @@ export default function EachGame() {
                 <SimilarGames id={id  ?? '' } />
             </div>
             <div className="max-sm:flex max-sm:flex-col mt-5">
-                <img src={game.image} alt={game.name} className="max-sm:h-[25em] max-sm:w-full"/>
+                <img src={game.image} alt={game.name} className="max-sm:h-[25em] max-sm:w-full min-sm:m-auto min-sm:size-100"/>
                  
-               <ul  className="max-sm:flex max-sm:flex-row max-sm:w-full  overflow-scroll border-[#284246] mt-5 mb-5">
+               <ul  className="flex flex-row:w-full  overflow-scroll border-[#284246] mt-5 mb-5">
             {game.screenshots.map((eachScreenshot,index) => (
             <li key={index}>
-                <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="max-sm:size-50 max-w-none border-solid border-5"/>
+                <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="max-sm:size-50 max-w-none border-solid border-5 min-sm:h-[15em] min-sm:w-[20em]"/>
         
             </li>
             ))}</ul>

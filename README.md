@@ -2,6 +2,8 @@
 
 A frontend web application that fetches data from the [GameBrain API](https://gamebrain.co) and displays it in an interactive UI.  
 
+> ⚠️ **Work in Progress** – This project is still under development. Features and UI may change.
+
 ## 🚀 Tech Stack
 - **React**
 - **TypeScript**

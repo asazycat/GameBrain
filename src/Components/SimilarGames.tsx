@@ -6,6 +6,7 @@ import type { IGame } from "../interface";
 
 
 export default function SimilarGames({ id }: { id: string }) {
+    // const [slide, setSlide] = useState(false)
     const [similarGames, setSimilarGames] = useState<IGame[]>([])
     useEffect(() => {
             let isReq = false
@@ -31,6 +32,12 @@ export default function SimilarGames({ id }: { id: string }) {
   
     
     return (
-        <h1>{similarGames.map((similarGame) => (<li key={similarGame.id}>{similarGame.name}</li>)) }</h1>
+        <ul  className="max-sm:flex max-sm:flex-row max-sm:w-full  overflow-scroll border-[#284246] mt-5 mb-5">
+            {similarGames.map((similarGame) => (
+            <li key={similarGame.id}>
+                <img src={`${similarGame.image}`} alt={similarGame.name} className="max-sm:size-50 max-w-none border-solid border-5"/>
+        
+            </li>
+            ))}</ul>
     )
 }

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import apiKey from "../../public/apiKey"
 import SimilarGames from "./SimilarGames"
 import type { IGame } from "../interface"
+import Rating from "./Rating"
 
 
 export default function EachGame() {
@@ -47,13 +48,19 @@ export default function EachGame() {
         return () => { isReq = true }
 }, [id]) 
 
-    return (<>
-        <h1>{game.name}</h1>
-        <p>{game.short_description}</p>
-        <img src={game.image } alt={game.name}/>
-        <p></p>
-        <div>
-        <SimilarGames id={id ?? ''} />
-        </div>
-        </>)
+    return (
+        <div className="max-sm:flex max-sm:flex-col-reverse mt-5">
+            <div className="border-[#284246] bg-[#284246] text-white font-mono ">   
+                <h1 className="max-sm:text-2xl max-sm:p-5 max-sm:text-center">{game.name}</h1>
+                <p className="max-sm:p-2 flex">{(game.rating.mean * 5).toFixed(2) } <Rating rating={game.rating} /> </p>
+                <p className="">{game.short_description}</p>
+            </div>
+            <div className="max-sm:flex max-sm:flex-col mt-5">
+                <img src={game.image} alt={game.name} className="max-sm:h-[25em] max-sm:w-full"/>
+                 
+                <SimilarGames id={id ?? ''} />
+            </div>
+        
+       
+        </div>)
 }

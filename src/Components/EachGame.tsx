@@ -5,27 +5,51 @@ import apiKey from "../../public/apiKey"
 import type { IGame } from "../interface"
 import Rating from "./Rating"
 import SimilarGames from "./SimilarGames"
+// import SimilarGames from "./SimilarGames"
 
 
 export default function EachGame() {
     const { id } = useParams()
     const [game, setGame] = useState<IGame>({
-        id: 0,
-    year: 0,
-    name: '',
-    genre: '',
-    image: '',
-    link: '',
-    rating: {
-                mean: 0,
-                count: 0
-            },
-    adult_only: true,
-    screenshots: [],
-    micro_trailer: '',
-    gameplay: '',
-    short_description: ''
-    })
+  id: 0,
+  name: '',
+  image: '',
+  gameplay: '',
+  link: '',
+  x_url: '',
+  rating: {
+    mean: 0,
+    count: 0,
+    mean_players: 0,
+    count_players: 0,
+    mean_critics: 0,
+    count_critics: 0
+  },
+  description: '',
+  short_description: '',
+  release_date: '',
+  developer: '',
+  playtime: {
+    percentiles: [],
+    min: 0,
+    median: 0,
+    max: 0,
+    mean: 0,
+    mentions: 0
+  },
+  platforms: [],
+  tags: [],
+  genres: [],
+  genre: '',
+  themes: [],
+  adult_only: false,
+  play_modes: [],
+  screenshots: [],
+  videos: [],
+  offers: [],
+  official_stores: [],
+  micro_trailer: ''
+})
     useEffect(() => {
        
         
@@ -48,28 +72,40 @@ export default function EachGame() {
 
         return () => { isReq = true }
 }, [id]) 
+console.log(game)
+    return (<>
+        <div className="border-2 m-auto w-5/6 flex p-2 justify-around mt-5 rounded-2xl bg-[#284246] border-[#284246] ">
+            <ul className="m-2">{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{eachGenre.name}</li>)}</ul>
+            <ul className="m-2">{game.tags.map((tag) => <li className=" mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{tag.name}</li>) }</ul>
+        </div>    
+        
+        <div className=" m-auto mt-5 flex border-double  text-center w-3/4 justify-around text-white">
+            <h1 className="text-lg">{game.developer}</h1>
+            <p className="text-1xl"> ( Release: {game.release_date } )</p>
+        </div>
 
-    return (
-        <div className="max-sm:flex max-sm:flex-col-reverse mt-5 min-sm:flex min-sm:flex-col-reverse">
-            <div className="border-[#284246] bg-[#284246] text-white font-mono ">   
-                <h1 className="max-sm:text-3xl max-sm:p-5 max-sm:text-center">{game.name}</h1>
-                <p className="max-sm:p-2 flex">{(game.rating.mean * 5).toFixed(2) } <Rating rating={game.rating} /> </p>
-                <p className="">{game.short_description}</p>
-                <h2 className="mt-5 mb-5 max-sm:text-2xl" >Similiar Games</h2>
-                <SimilarGames id={id  ?? '' } />
+        <div className="flex w-9/10  m-auto p-5 mt-2 bg-[#284246] border-[#284246] rounded">
+            <img src={`${game.image}`} alt={`${game.name}`} className="size-40" />
+            <div className=" bg-[#284246] border-[#284246] p-2 rounded-sm ">
+                <h1 className="text-lg text-white ">{game.name}</h1>
+                <ul className="text-[#d2eb47]">{game.themes.map((theme) => <li>{theme.name}</li>)}</ul>
+                <ul className="text-[#d2eb47]">{game.play_modes.map((play_mode) => <li>{play_mode.name}</li>) }</ul>
             </div>
-            <div className="max-sm:flex max-sm:flex-col mt-5">
-                <img src={game.image} alt={game.name} className="max-sm:h-[25em] max-sm:w-full min-sm:m-auto min-sm:size-100"/>
-                 
-               <ul  className="flex flex-row:w-full  overflow-scroll border-[#284246] mt-5 mb-5">
-            {game.screenshots.map((eachScreenshot,index) => (
-            <li key={index}>
-                <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="max-sm:size-50 max-w-none border-solid border-5 min-sm:h-[15em] min-sm:w-[20em]"/>
-        
-            </li>
-            ))}</ul>
-            </div>
-        
-           
-        </div>)
+        </div>
+
+        <div className=" w-9/10 m-auto mt-5 p-2 text-white bg-[#284246] border-[#284246] rounded">
+             <ul  className="flex flex-row:w-full  overflow-scroll border-[#284246] mt-5 mb-5">
+                {game.screenshots.map((eachScreenshot,index) => ( <li key={index}>
+                    <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="size-50 max-w-none m-2" />
+                    </li>
+                ))}
+            </ul>
+            <p className="p-5">{game.description}</p>
+            <video src={`${game.micro_trailer}`} controls >Video not supported on this browser</video>
+            <p className="mt-5"> <Rating rating={game.rating} /></p>
+        </div>
+
+         <SimilarGames id={id  ?? '' } />
+        </>
+    )
 }

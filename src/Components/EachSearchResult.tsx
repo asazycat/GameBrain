@@ -16,7 +16,7 @@ export default function EachSearchResult({ game }: {game: IGame}) {
                     <h1 className=" text-white font-mono max-sm:text-2xl max-sm:p-5 max-sm:text-center">{name}</h1>   
                         <p className="max-sm:p-2 flex  font-mono text-white ">{(rating.mean * 5).toFixed(2) } <Rating rating={rating} /> </p>
                  </div>
-                    <img src={image ?? '../../public/image-not-available.jpg'} alt={name} className=" min-sm:h-[15em] min-sm:w-[20em] max-sm:h-[15em] max-sm:w-full border-2 rounded-2xl"/>
+                    <img src={image ?? '../../public/image-not-available.jpg'} alt={name} className=" min-sm:h-[15em] min-sm:w-[20em] max-sm:h-[15em] max-sm:w-full border-2 "/>
                   
             </li>
             </Link>

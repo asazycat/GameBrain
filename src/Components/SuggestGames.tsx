@@ -31,7 +31,6 @@ export default function SuggestGames() {
         return () => { isReq = true }
     }, [query])
     
-    console.log(suggestedGames)
     return (
          <div className="flex p-2 text-xl bg-white border-solid min-sm:border-2 ">
             

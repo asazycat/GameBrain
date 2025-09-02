@@ -17,7 +17,7 @@ A frontend web application that fetches data from the [GameBrain API](https://ga
 ```bash
 # Clone the repository
 git clone https://github.com/asazycat/GameBrain.git
-cd GameBrain
+cd gameBrain
 
 # Install dependencies
 npm install

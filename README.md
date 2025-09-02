@@ -27,7 +27,7 @@ npm run dev
 🔑 API Key
 This project uses the GameBrain API.
 
-If the pages don’t load, you may need to get a free API key from gamebrain.co.
+If the pages don’t load, you may need to get a free API key from gamebrain.co. Copy the api key into public/apiKey.ts.
 
 The free plan allows up to 50 requests per day.
 

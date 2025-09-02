@@ -80,14 +80,14 @@ console.log(game)
         </div>    
         
         <div className=" m-auto mt-5 flex border-double  text-center w-3/4 justify-around text-white">
-            <h1 className="text-lg">{game.developer}</h1>
-            <p className="text-1xl"> ( Release: {game.release_date } )</p>
+            <h1 className="text-sm">{game.developer}</h1>
+            <p className="text-sm"> ( Release: {game.release_date } )</p>
         </div>
 
         <div className="flex w-9/10  m-auto p-5 mt-2 bg-[#284246] border-[#284246] rounded">
             <img src={`${game.image}`} alt={`${game.name}`} className="size-40" />
             <div className=" bg-[#284246] border-[#284246] p-2 rounded-sm ">
-                <h1 className="text-lg text-white ">{game.name}</h1>
+                <h1 className="text-sm text-white ">{game.name}</h1>
                 <ul className="text-[#d2eb47]">{game.themes.map((theme) => <li>{theme.name}</li>)}</ul>
                 <ul className="text-[#d2eb47]">{game.play_modes.map((play_mode) => <li>{play_mode.name}</li>) }</ul>
             </div>

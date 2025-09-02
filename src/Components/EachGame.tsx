@@ -74,9 +74,9 @@ export default function EachGame() {
 }, [id]) 
 console.log(game)
     return (<>
-        <div className="border-2 m-auto w-5/6 flex p-2 justify-around mt-5 rounded-2xl bg-[#284246] border-[#284246] ">
-            <ul className="m-2">{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{eachGenre.name}</li>)}</ul>
-            <ul className="m-2">{game.tags.map((tag) => <li className=" mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{tag.name}</li>) }</ul>
+        <div className="border-2 m-auto w-5/6 flex p-2 justify-around mt-5 rounded-2xl bg-[#284246] border-[#284246] text-center">
+            <ul className={`${game.tags.length === 0 ? 'm-auto' : ''}`}>{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{eachGenre.name}</li>)}</ul>
+            <ul className="">{game.tags.map((tag) => <li className=" mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{tag.name}</li>) }</ul>
         </div>    
         
         <div className=" m-auto mt-5 flex border-double  text-center w-3/4 justify-around text-white">

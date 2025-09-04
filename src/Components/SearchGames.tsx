@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import apiKey from '../../public/apiKey'
 import type { IGame } from '../interface' 
 import EachSearchResult from "./EachSearchResult"
+
 export function SearchGames() {
     const [searchedGames, setSearchedGames] = useState<IGame[]>([])
     const [sort, setSort] = useState('computed_rating')

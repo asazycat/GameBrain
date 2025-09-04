@@ -4,7 +4,7 @@
 export default function Homepage () {
     return (
         <div className=" m-auto bg-[#284246]  border-2 solid p-2 w-9/10 mt-15">
-            <img src="../../public/image-not-available.jpg" className="m-auto"/>
+            <img src="https://media.gq-magazine.co.uk/photos/645b5c3c8223a5c3801b8b26/16:9/w_1280,c_limit/100-best-games-hp-b.jpg?mbid=social_retweet" className="m-auto"/>
             <div className="flex bg-[#284246] w-full justify-around text-[#d2eb47] mt-5">
                 <button className="border-2 solid  m-2 rounded-2xl bg-[#77858f] text-[#d2eb47] border-[#77858f] ">Top PlayStation Games</button>
                 <button className="border-2 solid m-2 rounded-2xl bg-[#77858f] text-[#d2eb47] border-[#77858f] ">Top Xbox Games</button>

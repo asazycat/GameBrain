@@ -16,7 +16,7 @@ export default function EachSearchResult({ game }: {game: IGame}) {
                     <h1 className=" text-white font-mono text-2xl p-5 text-center">{name}</h1>   
                         <div className="p-2 flex  font-mono text-white w-full justify-around"> <Rating rating={rating} /> </div>
                  </div>
-                    <img src={image ?? '../../public/image-not-available.jpg'} alt={name} className=" h-[15em] w-full "/>
+                    <img src={image ?? '../assets/image-not-available.jpg'} alt={name} className=" h-[15em] w-full "/>
                   
             </li>
             </Link>

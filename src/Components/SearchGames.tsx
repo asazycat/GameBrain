@@ -5,12 +5,13 @@ import EachSearchResult from "./EachSearchResult"
 export function SearchGames() {
     const [searchedGames, setSearchedGames] = useState<IGame[]>([])
     const [sort, setSort] = useState('computed_rating')
-  
+    const [pagination, setPagination] = useState(0);
 
     
     useEffect(() => {
         const params = new URLSearchParams(
             {
+                'offset': pagination.toString(),
                 'sort': sort,
                 'sort-order': 'desc'
             })
@@ -34,11 +35,19 @@ export function SearchGames() {
         gamesSearchedAPICall()
 
         return () => { isReq = true }
-    }, [sort])
+    }, [pagination, sort])
 
   
 
-
+    const handlePagination = (e: React.MouseEvent<HTMLElement>) => {
+        console.log(pagination)
+        if ((e.target as HTMLInputElement).innerText === 'Next Page') { 
+            setPagination(pagination + 1)
+        } else {
+           setPagination(pagination - 1)
+       }
+      
+    }
 
 
     if (searchedGames.length !== 0) {
@@ -57,6 +66,10 @@ export function SearchGames() {
                         <EachSearchResult game={eachGame} key={eachGame.id}/>    
                     ))}
                 </ul>
+                <div className="flex flex-row-reverse justify-around text-white text-2sm  mb-3  ml-auto mr-auto p-2 border-underline border-b-1 w-2/3">
+                    <button onClick={handlePagination}>Next Page</button>
+                    <button onClick={handlePagination}>Previous Page</button>
+                </div>
             </>
         )
     } else {

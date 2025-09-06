@@ -1,0 +1,37 @@
+import {useState, type Dispatch,  type SetStateAction } from "react"
+import type {IToken } from "../interface"
+import localSiteDemo from '../../public/localSiteDemo'
+
+export default function LoginPage({ setTokenObj }: {  setTokenObj: Dispatch<SetStateAction<IToken>> }) {
+    
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    
+    
+     
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault() 
+        await fetchTokenWpJWT().then((res) => res.json())
+            .then((res) => setTokenObj(res))
+            .catch((err) => console.log(err.message))
+
+        
+    }
+    
+    const fetchTokenWpJWT =  () => {
+          return fetch(`${localSiteDemo}/jwt-auth/v1/token`, { method: 'POST',  headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({username: username, password: password}) })
+           
+        }
+
+    return (
+        <form onSubmit={handleSubmit} className="flex flex-col w-3/4 m-auto p-5 bg-[#284246]  border-2 solid rounded-2xl h-[10em] justify-between">
+            <input className='bg-white text-gray-400' type="text" onChange={e => setUsername(e.target.value)} />
+            <input className='bg-white text-gray-400' type="password" onChange={e => setPassword(e.target.value)} />
+            <div className="flex flex-row justify-around">
+                <button type='submit' className="bg-[#77858f] text-[#d2eb47] border-[#77858f]  border-2 border-solid p-2 rounded-2xl">Login</button>
+                <button onClick={ () => alert('This has not been implemented') } className="bg-[#77858f] text-[#d2eb47] border-[#77858f]  border-2 border-solid p-2 rounded-2xl">Sign Up</button>
+            </div>
+        </form>
+    )
+}

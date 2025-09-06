@@ -1,3 +1,33 @@
+
+
+export interface ILogin {
+  username: string,
+  password: string,
+}
+
+
+export interface IToken {
+  token:string,
+  user_name:string,
+  user_nicename:string,
+  user_display_name: string,
+
+}
+
+export interface IUser {
+  id: string,
+  name: string,
+  description: string,
+  slug: string,
+  avatar_urls: {
+    24: string,
+    48: string,
+    96: string
+  },
+  favourite_games: string[]
+}
+
+
 export interface IGame {
   id: number;
   name: string;

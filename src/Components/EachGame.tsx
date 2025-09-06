@@ -5,6 +5,7 @@ import apiKey from "../../public/apiKey"
 import type { IGame } from "../interface"
 import Rating from "./Rating"
 import SimilarGames from "./SimilarGames"
+import FavouriteButton from "./FavouriteButton"
 // import SimilarGames from "./SimilarGames"
 
 
@@ -72,7 +73,7 @@ export default function EachGame() {
 
         return () => { isReq = true }
 }, [id]) 
-console.log(game)
+
     return (<>
         <div className="border-2 m-auto w-5/6 flex p-2 justify-around mt-5 rounded-2xl bg-[#284246] border-[#284246] text-center">
             <ul className={`${game.tags.length === 0 ? 'm-auto' : ''}`}>{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{eachGenre.name}</li>)}</ul>
@@ -89,8 +90,10 @@ console.log(game)
             <div className=" bg-[#284246] border-[#284246] p-2 rounded-sm ">
                 <h1 className="text-sm text-white ">{game.name}</h1>
                 <ul className="text-[#d2eb47]">{game.themes.map((theme) => <li>{theme.name}</li>)}</ul>
-                <ul className="text-[#d2eb47]">{game.play_modes.map((play_mode) => <li>{play_mode.name}</li>) }</ul>
+                <ul className="text-[#d2eb47]">{game.play_modes.map((play_mode) => <li>{play_mode.name}</li>)}</ul>
+                <FavouriteButton id={id ?? ''} />
             </div>
+            
         </div>
 
         <div className=" w-9/10 m-auto mt-5 p-2 text-white bg-[#284246] border-[#284246] rounded">
@@ -102,7 +105,7 @@ console.log(game)
             </ul>
             <p className="p-5">{game.description}</p>
             <video src={`${game.micro_trailer}`} controls >Video not supported on this browser</video>
-            <p className="mt-5"> <Rating rating={game.rating} /></p>
+            <div className="mt-5"> <Rating rating={game.rating} /></div>
         </div>
 
          <SimilarGames id={id  ?? '' } />

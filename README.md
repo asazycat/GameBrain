@@ -3,7 +3,7 @@
 
 # 🎮 GameBrain
 
-Gamebrain is a passion project of mine that borrows the api of the respected name it is named after (gamebrain.co). It combines endpoints from the public api with custom endpoints from the backend of a headless WordPress CMS. I make use of react to continuously improve the frontend application along with robust type checking from typescript , fetch requests for all endpoints (goto gamebrain.co/docs for more...), wordpress-cms for a make shift backend 'body' and tailwind css for a responsive and sleek look.
+Gamebrain is a passion project of mine that borrows the api of the respected name it is named after (gamebrain.co). It combines endpoints from the public api with custom endpoints from the backend of a headless WordPress CMS. I make use of react to continuously improve the frontend application along with robust type checking from typescript , fetch requests for all endpoints (goto [gamebrain.co/docs](https://gamebrain.co/api/docs/quickstart) for more...), wordpress-cms for a make shift backend 'body' and tailwind css for a responsive and sleek look.
 
 ## Main Features
 

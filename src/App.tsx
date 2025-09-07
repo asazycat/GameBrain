@@ -9,6 +9,7 @@ import { LoginContextProvider } from './Contexts/LoginContextProvider'
 import LoginPage from './Components/LoginPage'
 import type { IToken, IUser } from './interface'
 import { UserContextProvider } from './Contexts/UserContextProvider'
+import localSiteDemo from '../public/localSiteDemo'
 
 
 
@@ -19,7 +20,7 @@ function App() {
   const [user, setUser] = useState<IUser>({id: '', name: '', description: '', slug: '', avatar_urls: { 24: '', 48: '', 96: ''},favourite_games: []})
   useEffect(() => {
     (async function() {
-      return await fetch('http://gamebrain-cms.local/wp-json/wp/v2/users/me', {headers: {Authorization: `Bearer ${tokenObj.token}`}})
+      return await fetch(`${localSiteDemo}/wp/v2/users/me`, {headers: {Authorization: `Bearer ${tokenObj.token}`}})
     })().then((res) => res.json()).then((res) => setUser({id: res.id, name: res.name, description: res.description, slug: res.slug, avatar_urls: res.avatar_urls ,favourite_games: res.favourite_games})).catch((err) => alert(`${err.message}`))
    
 }, [tokenObj])

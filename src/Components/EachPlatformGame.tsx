@@ -1,7 +1,7 @@
 import type { IGame } from "../interface";
 
 export default function EachPlatformGame({ game }: { game: IGame }) {
-    const { id, name, genre, image } = game
+    const { id, image } = game
     return (
         <>
               <li key={id} className=" ">

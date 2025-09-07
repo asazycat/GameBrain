@@ -24,6 +24,9 @@ Gamebrain is a passion project of mine that borrows the api of the respected nam
 ## 🔗 Live Demo
 👉 [game-brain.vercel.app](https://game-brain.vercel.app)
 
+Username: DemoUserAuthor   
+Password: demoUser
+
 ## 📦 Local SetUp and Installation
 
 ```bash

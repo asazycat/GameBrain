@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import type { IGame } from "../interface"
-import {gameDemoWithoutAPICall} from '../../public/apiData'
+
 
 import apiKey from "../../public/apiKey"
 import EachPlatformGame from "./EachPlatformGame"
+import SuggestGames from "./SuggestGames"
 
 
 
@@ -34,20 +35,23 @@ export default function Homepage() {
 
     return (
         <>
-        <div className=" m-auto bg-[#284246]  border-2 solid p-2 w-9/10 mt-15">
+        <div className=" m-auto bg-[#284246] border-2 solid border-[#284246] w-9/10 mt-15 min-sm:flex min-sm:flex-row-reverse min-sm:rounded-2xl">
+            <img src="../../public/hero.jpg" className="m-auto size-150 rounded-2xl w-full"/>
           
-           <h1 className="mt-5 text-white text-center font-extrabold bg-[#284246]  m-auto w-auto p-3 border-[#62afb9] border-5 rounded-2xl  ">From Action-packed to Visual Novel. RPG, Adventure, Strategy and more. Explore a variety of games from all the ages.</h1>
+                <div className="m-2 mt-10 min-sm:mt-50">
+            <p className="mt-5 text-white text-center font-extrabold bg-[#284246]  m-auto w-auto p-3 border-[#62afb9] border-5 rounded-2xl  ">From Action-packed to Visual Novel. RPG, Adventure, Strategy and more. Explore a variety of games from all the ages.</p>
             <div className="flex bg-[#284246] w-full justify-around text-[#d2eb47] mt-5">
                 <button className="border-2 solid  m-2 rounded-2xl bg-[#77858f] text-[#d2eb47] border-[#77858f] " onClick={e => setPlatform(e.currentTarget.value)} value='playstation'>Top PlayStation Games</button>
                 <button className="border-2 solid m-2 rounded-2xl bg-[#77858f] text-[#d2eb47] border-[#77858f] " onClick={e => setPlatform(e.currentTarget.value)} value='xbox'>Top Xbox Games</button>
                 <button className="border-2 solid m-2 rounded-2xl bg-[#77858f] text-[#d2eb47] border-[#77858f] " onClick={e => setPlatform(e.currentTarget.value)}  value='pc'>Top PC Games</button>
-            </div>
+                    </div>
+                    <div className="w-1/2 m-auto"><SuggestGames/></div>
+        </div>
         
-        
             </div>
-            <ul className="flex flex-row:w-full  overflow-scroll ">
-                {(platformGames ?? gameDemoWithoutAPICall).map((eachPlatformGame) => <EachPlatformGame game={eachPlatformGame} key={eachPlatformGame.id}/>)}
-            </ul>
+            {/* <ul className="flex flex-row:w-full  overflow-scroll ">
+                {platformGames.map((eachPlatformGame) => <EachPlatformGame game={eachPlatformGame} key={eachPlatformGame.id}/>)}
+            </ul> */}
         </>
             )
 }

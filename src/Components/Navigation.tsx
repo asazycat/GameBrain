@@ -10,7 +10,6 @@ export default function Navigation() {
             <ul className={`border-[#293f42] border-2 p-2 justify-around ${ burger ?  ' min-sm:flex' : 'hidden min-sm:flex min-sm:flex-row'} max-sm:absolute max-sm:w-full max-sm:h-full bg-[#293f42] max-sm: text-left  text-[#3887a3] font-mono text-xl `}>
                         <li><Link to={`/`}>Home</Link></li>
                         <li><Link to={`/games`}>Games</Link></li>
-                        <li><Link to={`/genres`}>Genres</Link></li>
                         <li><Link to={`/articles`}>Articles</Link></li>
                     </ul>
                 </nav>

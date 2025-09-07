@@ -3,7 +3,7 @@ import type { IGame } from "../interface"
 
 
 import apiKey from "../../public/apiKey"
-import EachPlatformGame from "./EachPlatformGame"
+// import EachPlatformGame from "./EachPlatformGame"
 import SuggestGames from "./SuggestGames"
 
 
@@ -13,7 +13,7 @@ export default function Homepage() {
     const [platform, setPlatform] = useState('pc')
     const [platformGames, setPlatformGames] = useState<IGame[]>([])
     useEffect(() => {
-        
+        console.log(platformGames)
         const params = new URLSearchParams(
             {
                 'filters': `[{"key":"platform","values":[{"value":"${platform}"}]},{"key":"release_date","values":[{"value":"last_year"}]}]`

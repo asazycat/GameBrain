@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import type { IGame } from "../interface"
-
+import hero from '../../public/hero.jpg' 
 
 import apiKey from "../../public/apiKey"
 // import EachPlatformGame from "./EachPlatformGame"
@@ -37,7 +37,7 @@ export default function Homepage() {
     return (
         <>
         <div className=" m-auto bg-[#284246] border-2 solid border-[#284246] w-9/10 mt-15 min-sm:flex min-sm:flex-row-reverse min-sm:rounded-2xl">
-            <img src="../../public/hero.jpg" className="m-auto size-150 rounded-2xl w-full"/>
+            <img src={`${hero}`} className="m-auto size-150 rounded-2xl w-full"/>
           
                 <div className="m-2 mt-10 min-sm:mt-50">
             <p className="mt-5 text-white text-center font-extrabold bg-[#284246]  m-auto w-auto p-3 border-[#62afb9] border-5 rounded-2xl  ">From Action-packed to Visual Novel. RPG, Adventure, Strategy and more. Explore a variety of games from all the ages.</p>

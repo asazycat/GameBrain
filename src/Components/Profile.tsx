@@ -5,7 +5,7 @@ import { UserContextProvider } from "../Contexts/UserContextProvider"
 export default function Profile() {
 
     const user = useContext(UserContextProvider)
-    console.log(user)
+   
     if (user.name !== undefined) {
         return (
             <div className="flex flex-row max-sm:bg-[#1c2b2d]   bg-[#284246] ">

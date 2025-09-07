@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import apiKey from '../../public/apiKey'
 import type { IGame } from '../interface' 
+import {gameDemoWithoutAPICall} from '../../public/apiData'
 import EachSearchResult from "./EachSearchResult"
 
 export function SearchGames() {
@@ -63,7 +64,7 @@ export function SearchGames() {
                     </select>
                </div>
                 <ul className="grid gap-10  min-sm:grid min-sm:grid-cols-4 m-10  min-sm:m-auto min-sm:mt-5 ">
-                    {searchedGames.map((eachGame) => (
+                    {(searchedGames ?? gameDemoWithoutAPICall).map((eachGame) => (
                         <EachSearchResult game={eachGame} key={eachGame.id}/>    
                     ))}
                 </ul>
@@ -74,6 +75,7 @@ export function SearchGames() {
             </>
         )
     } else {
+
         return (
             <h1>Loading...</h1>
         )

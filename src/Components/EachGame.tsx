@@ -6,7 +6,7 @@ import type { IGame } from "../interface"
 import Rating from "./Rating"
 import SimilarGames from "./SimilarGames"
 import FavouriteButton from "./FavouriteButton"
-// import SimilarGames from "./SimilarGames"
+
 
 
 export default function EachGame() {
@@ -73,7 +73,7 @@ export default function EachGame() {
 
         return () => { isReq = true }
 }, [id]) 
-
+            
     return (<>
         <div className="border-2 m-auto w-5/6 flex p-2 justify-around mt-5 rounded-2xl bg-[#284246] border-[#284246] text-center">
             <ul className={`${game.tags.length === 0 ? 'm-auto' : ''}`}>{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{eachGenre.name}</li>)}</ul>

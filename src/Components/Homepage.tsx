@@ -12,8 +12,9 @@ import SuggestGames from "./SuggestGames"
 export default function Homepage() {
     const [platform, setPlatform] = useState('pc')
     const [platformGames, setPlatformGames] = useState<IGame[]>([])
+     console.log(platformGames)
     useEffect(() => {
-        console.log(platformGames)
+       
         const params = new URLSearchParams(
             {
                 'filters': `[{"key":"platform","values":[{"value":"${platform}"}]},{"key":"release_date","values":[{"value":"last_year"}]}]`

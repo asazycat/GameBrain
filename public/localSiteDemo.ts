@@ -1,6 +1,6 @@
 
 
-const localSiteDemo = `https://gamebrain-cms.infy.uk/wp-json/`
+const localSiteDemo = `https://gamebrain-cms.infy.uk/wp-json`
  
 export default localSiteDemo
 

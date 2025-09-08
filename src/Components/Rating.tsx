@@ -4,7 +4,7 @@ export default function Rating({ rating }: { rating: IRating }) {
    
     return (
         <>
-            <div className="flex items-center ml-3 w-full justify-around">
+            <div className="flex items-center  w-full justify-around">
                 <p className="bg-[#77858f] text-[#d2eb47] border-[#77858f] text-2xl p-2 rounded-full"> {(rating.mean * 5).toFixed(2)}</p>
             <div>
             <button type="button" className={`size-5 inline-flex justify-center items-center text-2xl rounded-full ${rating.mean * 5 >= 1 ? 'text-yellow-400' : 'text-gray-300' } disabled:opacity-50 disabled:pointer-events-none`}>

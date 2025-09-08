@@ -90,15 +90,17 @@ export default function EachGame() {
            
              
           
-            <div className=" bg-[#284246] border-[#284246] p-2 rounded-sm min-sm:flex min-sm:justify-around">
-                <div className="">
-                     <img src={`${game.image}`} alt={`${game.name}`} className="size-40 min-sm:size-80" />
-                    <h1 className="text-sm text-white ">{game.name}</h1>
+            <div className=" bg-[#284246] border-[#284246] p-2 w-full rounded-sm min-sm:flex min-sm:justify-around">
+                <div className="max-sm:flex flex-row justify-between max-sm:w-full">
+                    <img src={`${game.image}`} alt={`${game.name}`} className="size-40 min-sm:size-50" />
+                    <div className="w-full text-center">
+                    <h1 className="text-sm text-white">{game.name}</h1>
                     <ul className="text-[#d2eb47]">{game.themes.map((theme) => <li>{theme.name}</li>)}</ul>
-                    <ul className="text-[#d2eb47]">{game.play_modes.map((play_mode) => <li>{play_mode.name}</li>)}</ul>
-                    <FavouriteButton id={id ?? ''} />
+                        <ul className="text-[#d2eb47]">{game.play_modes.map((play_mode) => <li>{play_mode.name}</li>)}</ul>
+                            <FavouriteButton id={id ?? ''} />
+                        </div>
                 </div>
-                <div className="max-sm:hidden">
+                <div className="max-sm:hidden ">
                     <video src={`${game.micro_trailer}`} controls className="w-8/9 ml-auto mr-auto ">Video not supported on this browser</video>
                     <div className=" max-sm:hidden">
                          <ul className={`${game.tags.length === 0 ? 'm-auto' : ''} min-sm:flex min-sm:flex-row min-sm:w-full min-sm:m-2 min-sm:justify-around`}>{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 ">{eachGenre.name}</li>)}</ul>
@@ -113,9 +115,9 @@ export default function EachGame() {
         </div>
 
         <div className=" w-9/10 m-auto mt-5 p-2 text-white bg-[#284246] border-[#284246] rounded min-sm:flex min-sm:flex-col-reverse">
-             <ul  className="flex flex-row:w-full  overflow-scroll border-[#284246] mt-5 mb-5 min-sm:grid min-sm:grid-cols-3 min-sm:overflow-hidden min-sm:m-auto">
-                {game.screenshots.map((eachScreenshot,index) => ( <li key={index}> 
-                    <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="size-50 max-w-none m-2" />
+             <ul  className="flex flex-row:w-full  overflow-scroll border-[#284246] mt-5 mb-5 min-sm:grid min-sm:grid-cols-3 min-sm:overflow-hidden min-sm:m-auto min-md:w-full min-md:grid-cols-4">
+                {game.screenshots.map((eachScreenshot,index) => ( <li key={index} className="m-auto"> 
+                    <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="size-50 max-w-none border-2 border-[black] m-2" />
                     </li>
                 ))}
             </ul>

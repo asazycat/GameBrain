@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import apiKey from '../../public/apiKey'
 import type { IGame } from '../interface' 
-import {gameDemoWithoutAPICall} from '../../public/apiData'
 import EachSearchResult from "./EachSearchResult"
 
 export function SearchGames() {
@@ -33,7 +32,7 @@ export function SearchGames() {
                 return response.json();
                     })
            .then(data => { if (!isReq) setSearchedGames(data.results) })
-        .catch(error => console.error('There was a problem with the fetch operation:', error));
+        .catch(error => alert(error.message));
         gamesSearchedAPICall()
 
         return () => { isReq = true }
@@ -64,7 +63,7 @@ export function SearchGames() {
                     </select>
                </div>
                 <ul className="grid gap-10  min-sm:grid min-sm:grid-cols-4 m-10  min-sm:m-auto min-sm:mt-5 ">
-                    {(searchedGames ?? gameDemoWithoutAPICall).map((eachGame) => (
+                    {(searchedGames).map((eachGame) => (
                         <EachSearchResult game={eachGame} key={eachGame.id}/>    
                     ))}
                 </ul>

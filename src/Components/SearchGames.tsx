@@ -6,7 +6,7 @@ import EachSearchResult from "./EachSearchResult"
 export function SearchGames() {
     const [searchedGames, setSearchedGames] = useState<IGame[]>([])
     const [sort, setSort] = useState('computed_rating')
-    const [pagination, setPagination] = useState(0);
+    const [pagination, setPagination] = useState(1);
 
     
     useEffect(() => {

@@ -32,7 +32,7 @@ export function SearchGames() {
                 return response.json();
                     })
            .then(data => { if (!isReq) setSearchedGames(data.results) })
-        .catch(error => alert(error.message));
+        .catch(error => alert(`${error.message}, ${error.code}`));
         gamesSearchedAPICall()
 
         return () => { isReq = true }

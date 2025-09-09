@@ -41,7 +41,6 @@ export function SearchGames() {
   
 
     const handlePagination = (e: React.MouseEvent<HTMLElement>) => {
-        console.log(pagination)
         if ((e.target as HTMLInputElement).innerText === 'Next Page') { 
             setPagination(pagination + 1)
         } else {

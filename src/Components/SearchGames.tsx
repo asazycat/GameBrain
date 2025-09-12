@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import apiKey from '../../public/apiKey'
 import type { IGame } from '../interface' 
 import EachSearchResult from "./EachSearchResult"
@@ -40,14 +40,16 @@ export function SearchGames() {
 
   
 
-    const handlePagination = (e: React.MouseEvent<HTMLElement>) => {
+    const handlePagination = useCallback((e: React.MouseEvent<HTMLElement>) => {
         if ((e.target as HTMLInputElement).innerText === 'Next Page') { 
+            setSearchedGames([])
             setPagination(pagination + 1)
         } else {
+           setSearchedGames([])
            setPagination(pagination - 1)
        }
       
-    }
+    },[pagination])
 
 
     if (searchedGames.length !== 0) {
@@ -63,7 +65,7 @@ export function SearchGames() {
                </div>
                 <ul className="grid gap-10  min-sm:grid min-sm:grid-cols-4 m-10  min-sm:m-auto min-sm:mt-5 ">
                     {(searchedGames).map((eachGame) => (
-                        <EachSearchResult game={eachGame} key={eachGame.id}/>    
+                        <EachSearchResult game={eachGame} key={eachGame.id} />    
                     ))}
                 </ul>
                 <div className="flex flex-row-reverse justify-around text-white text-2sm  mb-3  ml-auto mr-auto p-2 border-underline border-b-1 w-2/3">

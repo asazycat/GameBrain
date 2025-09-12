@@ -45,9 +45,11 @@ export function SearchGames() {
             setSearchedGames([])
             setPagination(pagination + 1)
         } else {
-           setSearchedGames([])
-           setPagination(pagination - 1)
-       }
+            if (pagination > 1) {
+                 setSearchedGames([])
+                setPagination(pagination - 1)
+                }
+        }
       
     },[pagination])
 

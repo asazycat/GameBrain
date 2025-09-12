@@ -3,7 +3,7 @@ import type { IGame } from "../interface"
 import hero from '../../public/hero.jpg' 
 
 import apiKey from "../../public/apiKey"
-// import EachPlatformGame from "./EachPlatformGame"
+import EachPlatformGame from "./EachPlatformGame"
 import SuggestGames from "./SuggestGames"
 
 
@@ -50,9 +50,9 @@ export default function Homepage() {
         </div>
         
             </div>
-            {/* <ul className="flex flex-row:w-full  overflow-scroll ">
+            <ul className="flex flex-row:w-full  overflow-scroll ">
                 {platformGames.map((eachPlatformGame) => <EachPlatformGame game={eachPlatformGame} key={eachPlatformGame.id}/>)}
-            </ul> */}
+            </ul>
         </>
             )
 }

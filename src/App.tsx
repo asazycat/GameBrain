@@ -25,7 +25,7 @@ function App() {
    
 }, [tokenObj])
 
- console.log(localStorage)
+
   if (!tokenObj.token || !JSON.parse(localStorage.getItem('tokenObj')!)) {
     return <LoginPage setTokenObj={setTokenObj} />
   } else if(tokenObj.token || JSON.parse(localStorage.getItem('tokenObj')!)) {

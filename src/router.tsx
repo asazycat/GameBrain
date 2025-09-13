@@ -5,6 +5,8 @@ import EachGame from "./Components/EachGame"
 
 import LayoutComponent from "./Components/LayoutComponent"
 import Articles from "./Components/Articles"
+import User from "./Components/User"
+import Users  from "./Components/Users"
 export const router = createBrowserRouter([{
     path: '/',
     element: <LayoutComponent/>,
@@ -31,6 +33,14 @@ export const router = createBrowserRouter([{
         {
             path: '*',
             element: <h1>PAGE NOT FOUND</h1>,
+        },
+        {
+            path: '/users',
+            element: <Users/>
+        },
+        {
+            path: '/users/:id',
+            element: <User/>
         }
     ]
 }])

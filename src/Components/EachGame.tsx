@@ -92,24 +92,23 @@ export default function EachGame() {
           
             <div className=" bg-[#1c2b2d] border-[#1c2b2d] p-2 w-full rounded-sm min-sm:flex min-sm:justify-around">
                 <div className="max-sm:flex flex-row justify-between max-sm:w-full">
-                    <img src={`${game.image}`} alt={`${game.name}`} className="size-40 min-sm:size-50" />
+                    <img src={`${game.image}`} alt={`${game.name}`} className="size-40 min-sm:size-75" />
                     <div className="w-full text-center">
-                    <h1 className="text-sm text-white">{game.name}</h1>
+                        <h1 className="text-sm text-white min-sm:text-2xl">{game.name}</h1>
+                         <div className="max-sm:hidden"><FavouriteButton id={id ?? ''}/></div>
                     <ul className="text-[#d2eb47]">{game.themes.map((theme) => <li>{theme.name}</li>)}</ul>
-                        <ul className="text-[#d2eb47]">{game.play_modes.map((play_mode) => <li>{play_mode.name}</li>)}</ul>
-                            <FavouriteButton id={id ?? ''} />
-                        </div>
+                        <ul className="text-[#d2eb47] min-sm:flex m-2 min-sm:flex-col min-sm:text-left">{game.play_modes.map((play_mode) => <li>{play_mode.name}</li>)}</ul>
+                        <div className="min-sm:hidden"><FavouriteButton id={id ?? ''}/></div>
+                         <ul className={`${game.tags.length === 0 ? 'm-auto' : ''} flex max-sm:hidden`}>{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 ">{eachGenre.name}</li>)}</ul>
+                        <ul className="flex">{game.tags.map((tag) => <li className=" mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 flex max-sm:hidden">{tag.name}</li>) }</ul>
+                    </div>
                 </div>
                 <div className="max-sm:hidden ">
-                    <video src={`${game.micro_trailer}`} controls className="w-8/9 ml-auto mr-auto ">Video not supported on this browser</video>
-                    <div className=" max-sm:hidden">
-                         <ul className={`${game.tags.length === 0 ? 'm-auto' : ''} min-sm:flex min-sm:flex-row min-sm:w-full min-sm:m-2 min-sm:justify-around`}>{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 ">{eachGenre.name}</li>)}</ul>
-                        <ul className="min-sm:flex min-sm:flex-row min-sm:w-full min-sm:justify-around min-sm:m-auto">{game.tags.map((tag) => <li className=" mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 min-sm:w-25 min-sm:text-center">{tag.name}</li>) }</ul>
-                    </div>
+                    <video src={`${game.micro_trailer}`} controls className="w-full h-full">Video not supported on this browser</video>
                 </div>
                 
             </div>
-                <div className="max-sm:hidden text-white mt-5 w-full"> <Rating rating={game.rating} /></div>
+                <div className="max-sm:hidden text-white mt-5 w-1/3"> <Rating rating={game.rating} /></div>
             
           
         </div>

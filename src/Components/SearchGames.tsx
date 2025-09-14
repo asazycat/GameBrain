@@ -7,19 +7,30 @@ export function SearchGames() {
     const [searchedGames, setSearchedGames] = useState<IGame[]>([])
     const [sort, setSort] = useState('computed_rating')
     const [pagination, setPagination] = useState(1);
-
+  
     
     useEffect(() => {
         const params = new URLSearchParams(
             {
                 'offset': pagination.toString(),
                 'sort': sort,
-                'sort-order': 'desc'
+                'sort-order': 'desc',
+                'filters': `[   {"key": "review_rating", "values": []},{"key": "release_date", "values": []},{"key": "platform", "values": []},
+                                {"key": "genre", "values": []},
+                                {"key": "theme", "values": []},
+                                {"key": "play_mode", "values": []},
+                                {"key": "content_rating_normalized", "values": []},
+                                {"key": "input_mode", "values": []},
+                                {"key": "price", "values": []},
+                                {"key": "tag", "values": []},
+                                {"key": "feature", "values": []}
+                            ]`
             })
         
-        
+        const url = `https://api.gamebrain.co/v1/games?${params}`;
+        console.log(url)
         let isReq = false
-       const gamesSearchedAPICall = () => fetch(`https://api.gamebrain.co/v1/games?${params}`, {
+       const gamesSearchedAPICall = () => fetch(url, {
             method: 'GET',
              headers: {
                  'x-api-key': apiKey
@@ -57,7 +68,7 @@ export function SearchGames() {
     if (searchedGames.length !== 0) {
         return (
             <>
-                <div className="border-2 bg-[#1C2B2D] text-white border-[#1c2b2d] p-3">
+                <div className="border-2 bg-[#1c2b2d] text-white border-[#1c2b2d] mt-5 p-3">
                     <label>Sort By: </label>
                     <select onChange={(e) => setSort(e.target.value)} >
                         <option value='computed_rating' className="text-black"> Computed Rating</option>

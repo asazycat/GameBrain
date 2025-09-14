@@ -1,15 +1,14 @@
 import {useState, type Dispatch,  type SetStateAction } from "react"
 import type {IToken } from "../interface"
 import localSiteDemo from '../../public/localSiteDemo'
-import { Link } from "react-router-dom"
+
 
 export default function LoginPage({ setTokenObj }: {  setTokenObj: Dispatch<SetStateAction<IToken>> }) {
     
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    localStorage.removeItem('user')
-  localStorage.removeItem('tokenObject')
+  
     
      
     const handleSubmit = async (e: React.FormEvent) => {
@@ -32,7 +31,7 @@ export default function LoginPage({ setTokenObj }: {  setTokenObj: Dispatch<SetS
             <input className='bg-white text-gray-400 min-2xl:h-[3em]' type="password" onChange={e => setPassword(e.target.value)} placeholder='Password'/>
             <div className="flex flex-row justify-around">
                 <button type='submit' className="bg-[#77858f] text-[#d2eb47] border-[#77858f]  border-2 border-solid p-2 rounded-2xl " >Login</button>
-               <Link to={"/signup"}><button className="bg-[#77858f] text-[#d2eb47] border-[#77858f]  border-2 border-solid p-2 rounded-2xl">Sign Up</button></Link> 
+               <button className="bg-[#77858f] text-[#d2eb47] border-[#77858f]  border-2 border-solid p-2 rounded-2xl">Sign Up</button>
             </div>
         </form>
     )

@@ -75,7 +75,7 @@ export default function EachGame() {
 }, [id]) 
             
     return (<>
-        <div className="border-2 m-auto w-5/6 flex p-2 justify-around mt-5 rounded-2xl bg-[#284246] border-[#284246] text-center min-sm:hidden">
+        <div className="border-2 m-auto w-5/6 flex p-2 justify-around mt-5 rounded-2xl bg-[#1c2b2d] border-[#1c2b2d] text-center min-sm:hidden">
             <ul className={`${game.tags.length === 0 ? 'm-auto' : ''} `}>{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 ">{eachGenre.name}</li>)}</ul>
             <ul className="">{game.tags.map((tag) => <li className=" mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{tag.name}</li>) }</ul>
         </div>    
@@ -85,12 +85,12 @@ export default function EachGame() {
             <p className="text-sm"> ( Release: {game.release_date } )</p>
         </div>
 
-        <div className="flex w-9/10  m-auto p-5 mt-2 bg-[#284246] border-[#284246] rounded min-sm:m-auto min-sm:flex-col">
+        <div className="flex w-9/10  m-auto p-5 mt-2 bg-[#1c2b2d] border-[#1c2b2d] rounded min-sm:m-auto min-sm:flex-col">
              
            
              
           
-            <div className=" bg-[#284246] border-[#284246] p-2 w-full rounded-sm min-sm:flex min-sm:justify-around">
+            <div className=" bg-[#1c2b2d] border-[#1c2b2d] p-2 w-full rounded-sm min-sm:flex min-sm:justify-around">
                 <div className="max-sm:flex flex-row justify-between max-sm:w-full">
                     <img src={`${game.image}`} alt={`${game.name}`} className="size-40 min-sm:size-50" />
                     <div className="w-full text-center">
@@ -114,8 +114,8 @@ export default function EachGame() {
           
         </div>
 
-        <div className=" w-9/10 m-auto mt-5 p-2 text-white bg-[#284246] border-[#284246] rounded min-sm:flex min-sm:flex-col-reverse">
-             <ul  className="flex flex-row:w-full  overflow-scroll border-[#284246] mt-5 mb-5 min-sm:grid min-sm:grid-cols-3 min-sm:overflow-hidden min-sm:m-auto min-md:w-full min-md:grid-cols-4">
+        <div className=" w-9/10 m-auto mt-5 p-2 text-white bg-[#1c2b2d] border-[#1c2b2d] rounded min-sm:flex min-sm:flex-col-reverse">
+             <ul  className="flex flex-row:w-full  overflow-scroll border-[#1c2b2d] mt-5 mb-5 min-sm:grid min-sm:grid-cols-3 min-sm:overflow-hidden min-sm:m-auto min-md:w-full min-md:grid-cols-4">
                 {game.screenshots.map((eachScreenshot,index) => ( <li key={index} className="m-auto"> 
                     <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="size-50 max-w-none border-2 border-[black] m-2" />
                     </li>

@@ -29,8 +29,8 @@ export const router = createBrowserRouter([{
             path: '/games/:id',
             element: <EachGame />
             
-        }
-        ,
+        },
+
         {
             path: '/articles',
             element: <Articles/>,

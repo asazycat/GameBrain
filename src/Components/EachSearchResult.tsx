@@ -9,7 +9,7 @@ export default function EachSearchResult({ game }: {game: IGame}) {
     return (
         <>
         <Link to={`${id}`}>
-            <li key={id} className=" flex flex-col-reverse max-w-full bg-[#284246] ">
+            <li key={id} className=" flex flex-col-reverse max-w-full bg-[#1c2b2d] ">
                 
                 <div className=" p-3 "> 
                      <p className=" p-2 text-sm  text-center w-auto max-w-fit border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl m-0">{genre}</p>

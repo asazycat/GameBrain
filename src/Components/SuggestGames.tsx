@@ -32,10 +32,10 @@ export default function SuggestGames() {
     }, [query])
     
     return (
-         <div className="flex p-2 text-xl bg-white border-solid min-sm:border-2 ">
+         <div className=" p-2 text-xl bg-white border-solid min-sm:border-2 w-1/4 max-sm:mr-10">
             
                 <label className="hidden">Search</label><input type="text" onChange={e => setQuery(e.target.value) } placeholder='search'></input>
-            <ul className="absolute top-10 bg-white  max-sm:w-full  max-sm:left-0">
+            <ul className="absolute top-14 bg-white  max-sm:w-full  max-sm:left-0">
                 {
                     suggestedGames.map((element) => <li className="p-4" key={element.id}><Link to={`games/${element.id}`} >{element.name}</Link></li>)
                 }

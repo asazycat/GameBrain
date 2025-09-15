@@ -31,7 +31,7 @@ export default function LoginPage({ setTokenObj }: {  setTokenObj: Dispatch<SetS
             <input className='bg-white text-gray-400 min-2xl:h-[3em]' type="password" onChange={e => setPassword(e.target.value)} placeholder='Password'/>
             <div className="flex flex-row justify-around">
                 <button type='submit' className="bg-[#77858f] text-[#d2eb47] border-[#77858f]  border-2 border-solid p-2 rounded-2xl " >Login</button>
-               <button className="bg-[#77858f] text-[#d2eb47] border-[#77858f]  border-2 border-solid p-2 rounded-2xl">Sign Up</button>
+               <button className="bg-[#77858f] text-[#d2eb47] border-[#77858f]  border-2 border-solid p-2 rounded-2xl" onClick={() => alert('not implemented')}>Sign Up</button>
             </div>
         </form>
     )

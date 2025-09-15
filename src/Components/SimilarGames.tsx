@@ -31,15 +31,17 @@ export default function SimilarGames({ id }: { id: string }) {
 
   
     
-    return (
-        <ul  className="flex flex-row w-full overflow-scroll m-auto ">
+    return (<>
+        <h1 className="text-sm text-white min-sm:text-2xl w-9/10 m-auto text-center">Similar Games To Check Out</h1>
+        <ul  className="w-9/10 bg-[#1c2b2d] border-[#1c2b2d] flex flex-row overflow-scroll m-auto  min-sm:grid min-sm:grid-cols-5 mt-2 min-sm:overflow-x-hidden min-sm:overflow-y-hidden">
             {similarGames.map((similarGame) => (
 
-                <li key={similarGame.id}>
+                <li key={similarGame.id} className="min-sm:m-auto ">
                     <Link to={`/games/${similarGame.id}`}>
                 <img src={`${similarGame.image}`} alt={similarGame.name} className="size-50 max-w-none m-2"/>
         </Link>
             </li>
             ))}</ul>
+        </>
     )
 }

@@ -68,7 +68,7 @@ export function SearchGames() {
     if (searchedGames.length !== 0) {
         return (
             <>
-                <div className="border-2 bg-[#1c2b2d] text-white border-[#1c2b2d] mt-5 p-3">
+                <div className="border-2 bg-[#1c2b2d] text-white border-[#1c2b2d] mt-5 p-3 min-sm:w-9/10 min-sm:m-auto min-sm:mt-5 min-sm:rounded-2xl">
                     <label>Sort By: </label>
                     <select onChange={(e) => setSort(e.target.value)} >
                         <option value='computed_rating' className="text-black"> Computed Rating</option>
@@ -76,7 +76,7 @@ export function SearchGames() {
                         <option value='price' className="text-black">Price</option>
                     </select>
                </div>
-                <ul className="grid gap-10  min-sm:grid min-sm:grid-cols-4 m-10  min-sm:m-auto min-sm:mt-5 ">
+                <ul className="grid gap-10  min-sm:grid min-sm:grid-cols-5 m-10  min-sm:m-auto min-sm:mt-5 min-sm:w-9/10 min-sm:h-1/2">
                     {(searchedGames).map((eachGame) => (
                         <EachSearchResult game={eachGame} key={eachGame.id} />    
                     ))}

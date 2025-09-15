@@ -103,8 +103,9 @@ export default function EachGame() {
                         <ul className="flex">{game.tags.map((tag) => <li className=" mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 flex max-sm:hidden ">{tag.name}</li>) }</ul>
                     </div>
                 </div>
-                <div className="max-sm:hidden ">
-                    <video src={`${game.micro_trailer}`} controls className="w-full h-full">Video not supported on this browser</video>
+                <div className="max-sm:hidden w-1/2">
+                    <video src={`${game.micro_trailer}`} controls className="w-full  border-2 text-center">Video not supported on this browser</video>
+                     <p className="text-white  overflow-y-scroll h-1/2 min-sm:overflow-y-hidden ">{game.description}</p>
                 </div>
                 
             </div>
@@ -115,12 +116,12 @@ export default function EachGame() {
 
         <div className=" w-9/10 m-auto mt-5 p-2 text-white bg-[#1c2b2d] border-[#1c2b2d] rounded min-sm:flex min-sm:flex-col-reverse">
              <ul  className="flex flex-row:w-full  overflow-scroll border-[#1c2b2d] mt-5 mb-5 min-sm:grid min-sm:grid-cols-3 min-sm:overflow-hidden min-sm:m-auto min-md:w-full min-md:grid-cols-4">
-                {game.screenshots.map((eachScreenshot,index) => ( <li key={index} className="m-auto"> 
-                    <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="size-50 max-w-none border-2 border-[black] m-2" />
+                {game.screenshots.map((eachScreenshot,index) => ( <li key={index} className="m-auto w-9/10"> 
+                    <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="size-50 max-w-none border-1 border-[black]  min-sm:w-full min-sm:rounded-2xl min-sm:m-2" />
                     </li>
                 ))}
             </ul>
-            <p className="p-5">{game.description}</p>
+            <p className="p-5 min-sm:hidden ">{game.description}</p>
             <video src={`${game.micro_trailer}`} controls className="min-sm:hidden">Video not supported on this browser</video>
             <div className="mt-5 min-sm:hidden"> <Rating rating={game.rating} /></div>
         </div>

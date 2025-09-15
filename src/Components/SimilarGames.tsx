@@ -38,7 +38,7 @@ export default function SimilarGames({ id }: { id: string }) {
 
                 <li key={similarGame.id} className="min-sm:m-auto ">
                     <Link to={`/games/${similarGame.id}`}>
-                <img src={`${similarGame.image}`} alt={similarGame.name} className="size-50 max-w-none m-2"/>
+                <img src={`${similarGame.image}`} alt={similarGame.name} className="size-50 max-w-none m-2 border-1 border-[black]  min-sm:rounded-2xl min-sm:m-2"/>
         </Link>
             </li>
             ))}</ul>

@@ -118,3 +118,26 @@ export interface ITags {
     value: '',
     name: ''
 }
+
+
+export interface IPost {
+   id: number;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+    protected: boolean;
+  };
+  categories: number[];
+  tags: number[];
+  featured_media: number;
+  link: string;
+  
+  // optional expanded fields if embedding:
+  _embedded?: {
+    author?: Array<{ name: string; link: string }>;
+    "wp:featuredmedia"?: Array<{ source_url: string }>;
+    "wp:term"?: Array< { "id": number, "name": string, "slug": string }>;
+  };
+}

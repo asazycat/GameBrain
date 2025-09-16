@@ -24,7 +24,7 @@ function App() {
     })().then((res) => res.json()).then((res) => { setUser({ id: res.id, name: res.name, description: res.description, slug: res.slug, avatar_urls: res.avatar_urls, favourite_games: res.favourite_games });  }).catch((err) => alert(`${err.message}`))
    
 }, [tokenObj])
-console.log('inside app')
+console.log(`${tokenObj.token}`)
 
   if (!tokenObj.token || !JSON.parse(localStorage.getItem('tokenObj')!)) {
     return <LoginPage setTokenObj={setTokenObj} />

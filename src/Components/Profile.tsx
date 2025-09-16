@@ -22,7 +22,7 @@ export default function Profile() {
             </div>
                 <div className={`${menu ? `flex` : `hidden`} flex-col absolute max-sm:bg-[#1c2b2d]   bg-[#1c2b2d] mt-2 text-white p-2`} onMouseEnter={() => setMenu(true)} onMouseLeave={() => setMenu(false)}>
                     <button className="hover:text-[#d2eb47] ">View Profile</button>
-                    <button onClick={() => { localStorage.removeItem('tokenObj'); window.location.reload();}} className="hover:text-[#d2eb47]">Logout</button>
+                    <button onClick={() => { localStorage.removeItem('tokenObj'); location.reload();}} className="hover:text-[#d2eb47]">Logout</button>
                 </div>
                 </>
         )

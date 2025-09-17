@@ -10,7 +10,7 @@ import FavouriteButton from "./FavouriteButton"
 
 export default function EachGame() {
     const { id } = useParams()
-    const videoControl = useRef<HTMLVideoElement>(null)
+    const videoControl = useRef<HTMLVideoElement>(document.createElement('video'))
     const [imgSize, setImageSize] = useState('')
     const [game, setGame] = useState<IGame>({
   id: 0,
@@ -77,7 +77,7 @@ export default function EachGame() {
 
     return (
         <>
-        <div className={`bg-rgba(0,0,0,0)   ${imgSize.length === 0 ? `none ${videoControl.current!.controls = true}` : `absolute h-1/2 min-sm:h-screen w-full ${videoControl.current!.controls = false}`} top-100 `}> <img src={imgSize} className={`${imgSize.length === 0 ? 'h-0 w-0' : 'h-full w-3/4 rounded-4xl border-2'} m-auto `} onClick={() => {setImageSize('')}}/> </div>
+        <div className={`bg-rgba(0,0,0,0)   ${imgSize.length === 0 ? `none ${videoControl.current.controls = true}` : `absolute h-1/2 min-sm:h-screen w-full ${videoControl.current.controls = false}`} top-100 `}> <img src={imgSize} className={`${imgSize.length === 0 ? 'h-0 w-0' : 'h-full w-3/4 rounded-4xl border-2'} m-auto `} onClick={() => {setImageSize('')}}/> </div>
         <div className="border-2 m-auto w-5/6 flex p-2 justify-around mt-5 rounded-2xl bg-[#1c2b2d] border-[#1c2b2d] text-center min-sm:hidden">
             <ul className={`${game.tags.length === 0 ? 'm-auto' : ''} `}>{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 ">{eachGenre.name}</li>)}</ul>
             <ul className="">{game.tags.map((tag) => <li className=" mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{tag.name}</li>) }</ul>

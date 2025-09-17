@@ -11,7 +11,7 @@ export default function Users() {
       return await fetch(`${localSiteDemo}/wp/v2/users`, { headers: { Authorization: `Bearer ${tokenObj.token}` } })
           })().then((res) => res.json()).then((res) => { setUsers(res); console.log(res); })
     },[tokenObj.token])
-console.log(users)
+
     return (
         <ul>{users.map((eachUser: IUser) => <li>{eachUser.name}</li>) }</ul>
     )

@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useParams } from "react-router-dom"
 import apiKey from "../../public/apiKey"
-
 import type { IGame } from "../interface"
 import Rating from "./Rating"
 import SimilarGames from "./SimilarGames"
@@ -11,6 +10,8 @@ import FavouriteButton from "./FavouriteButton"
 
 export default function EachGame() {
     const { id } = useParams()
+    const videoControl = useRef<HTMLVideoElement>(null)
+    const [imgSize, setImageSize] = useState('')
     const [game, setGame] = useState<IGame>({
   id: 0,
   name: '',
@@ -53,7 +54,7 @@ export default function EachGame() {
 })
     useEffect(() => {
        
-        
+        setImageSize('')
         let isReq = false
        const gameDetail = () => fetch(`https://api.gamebrain.co/v1/games/${id}`, {
             method: 'GET',
@@ -73,8 +74,10 @@ export default function EachGame() {
 
         return () => { isReq = true }
 }, [id]) 
-            
-    return (<>
+
+    return (
+        <>
+        <div className={`bg-rgba(0,0,0,0)   ${imgSize.length === 0 ? `none ${videoControl.current!.controls = true}` : `absolute h-1/2 min-sm:h-screen w-full ${videoControl.current!.controls = false}`} top-100 `}> <img src={imgSize} className={`${imgSize.length === 0 ? 'h-0 w-0' : 'h-full w-3/4 rounded-4xl border-2'} m-auto `} onClick={() => {setImageSize('')}}/> </div>
         <div className="border-2 m-auto w-5/6 flex p-2 justify-around mt-5 rounded-2xl bg-[#1c2b2d] border-[#1c2b2d] text-center min-sm:hidden">
             <ul className={`${game.tags.length === 0 ? 'm-auto' : ''} `}>{game.genres.map((eachGenre) => <li className="mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 ">{eachGenre.name}</li>)}</ul>
             <ul className="">{game.tags.map((tag) => <li className=" mt-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1">{tag.name}</li>) }</ul>
@@ -104,7 +107,7 @@ export default function EachGame() {
                     </div>
                 </div>
                 <div className="max-sm:hidden w-1/2">
-                    <video src={`${game.micro_trailer}`} controls className="w-full  border-2 text-center">Video not supported on this browser</video>
+                        <video src={`${game.micro_trailer}`} ref={videoControl} className="w-full  border-2 text-center">Video not supported on this browser</video>
                      <p className="text-white  overflow-y-scroll h-1/2 min-sm:overflow-y-hidden ">{game.description}</p>
                 </div>
                 
@@ -117,7 +120,7 @@ export default function EachGame() {
         <div className=" w-9/10 m-auto mt-5 p-2 text-white bg-[#1c2b2d] border-[#1c2b2d] rounded min-sm:flex min-sm:flex-col-reverse">
              <ul  className="flex flex-row:w-full  overflow-scroll border-[#1c2b2d] mt-5 mb-5 min-sm:grid min-sm:grid-cols-3 min-sm:overflow-hidden min-sm:m-auto min-md:w-full min-md:grid-cols-4">
                 {game.screenshots.map((eachScreenshot,index) => ( <li key={index} className="m-auto w-9/10"> 
-                    <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className="size-50 max-w-none border-1 border-[black]  min-sm:w-full min-sm:rounded-2xl min-sm:m-2" />
+                    <img src={`${eachScreenshot}`} alt={`${game.name} screenshot `} className=' size-50 max-w-none border-1 border-[black]  min-sm:w-full min-sm:rounded-2xl min-sm:m-2' onClick={() => {setImageSize(eachScreenshot)}}/>
                     </li>
                 ))}
             </ul>

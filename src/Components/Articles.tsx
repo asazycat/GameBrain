@@ -11,10 +11,15 @@ export default function Articles() {
     useEffect(() => {
           (async function () {
       return await fetch(`${localSiteDemo}/wp/v2/posts?_embed`, { headers: { Authorization: `Bearer ${tokenObj.token}` } })
-          })().then((res) => res.json()).then((res) => { setPosts(res); console.log(res); })
+          })().then((res) => res.json()).then((res) => setPosts(res))
     },[tokenObj.token])
-
+console.log(posts)
     return (
-        <ul>{posts.map((eachPost: IPost) => <li>{eachPost.title.rendered }</li>) }</ul>
+        <ul className="flex flex-col">{posts.map((eachPost: IPost) =>
+            <li className="m-2">
+                {eachPost.title.rendered}
+                <img src={eachPost._embedded?.["wp:featuredmedia"]?.[0]!.source_url } />
+            </li>)}
+        </ul>
     )
 }

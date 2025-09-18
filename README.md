@@ -24,10 +24,8 @@ Gamebrain is a passion project of mine that borrows the api of the respected nam
 ## 🔗 Live Demo
 👉 [game-brain.vercel.app](https://game-brain.vercel.app)
 
-Username: DemoUserAuthor   
-Password: demouser
 
-Note: HTTP 402 error for games tab means tokens have expired, meaning the api key in public/apiKey.ts would have to be replaced with another. This can be done by obtaining one from https://gamebrain.co/api/docs/quickstart
+Note: HTTP 402 error for games tab means tokens have expired, meaning the api key in public/apiKey.ts would have to be replaced with another. This can be done by obtaining one from https://gamebrain.co/api/docs/quickstart 
 
 ## 📦 Local SetUp and Installation
 

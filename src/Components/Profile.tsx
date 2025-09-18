@@ -5,7 +5,7 @@ import { UserContextProvider } from "../Contexts/UserContextProvider"
 
 
 export default function Profile() {
-
+   
     const user = useContext(UserContextProvider)
     const [menu, setMenu] = useState(false)
     if (user.name !== undefined) {
@@ -22,7 +22,7 @@ export default function Profile() {
             </div>
                 <div className={`${menu ? `flex` : `hidden`} flex-col absolute max-sm:bg-[#1c2b2d]   bg-[#1c2b2d] mt-2 text-white p-2`} onMouseEnter={() => setMenu(true)} onMouseLeave={() => setMenu(false)}>
                     <button className="hover:text-[#d2eb47] ">View Profile</button>
-                    <button onClick={() => { localStorage.removeItem('tokenObj'); location.replace('https://game-brain.vercel.app/');}} className="hover:text-[#d2eb47]">Logout</button>
+                    <button onClick={() => { localStorage.removeItem('tokenObj'); location.replace(`${document.URL}`);}} className="hover:text-[#d2eb47]">Logout</button>
                 </div>
                 </>
         )

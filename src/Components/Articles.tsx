@@ -13,7 +13,7 @@ export default function Articles() {
       return await fetch(`${localSiteDemo}/wp/v2/posts?_embed`, { headers: { Authorization: `Bearer ${tokenObj.token}` } })
           })().then((res) => res.json()).then((res) => setPosts(res))
     },[tokenObj.token])
-console.log(posts)
+
     return (
         <ul className="flex flex-col">{posts.map((eachPost: IPost) =>
             <li className="m-2">

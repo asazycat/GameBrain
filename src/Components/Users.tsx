@@ -9,7 +9,7 @@ export default function Users() {
     useEffect(() => {
           (async function () {
       return await fetch(`${localSiteDemo}/wp/v2/users`, { headers: { Authorization: `Bearer ${tokenObj.token}` } })
-          })().then((res) => res.json()).then((res) => { setUsers(res); console.log(res); })
+          })().then((res) => res.json()).then((res) => { setUsers(res); })
     },[tokenObj.token])
 
     return (

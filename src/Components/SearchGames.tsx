@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useState } from "react"
+import {useEffect, useState } from "react"
 import apiKey from '../../public/apiKey'
 import type { IGame } from '../interface' 
 import EachSearchResult from "./EachSearchResult"
 
 export function SearchGames() {
     const [searchedGames, setSearchedGames] = useState<IGame[]>([])
+    const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     const [sort, setSort] = useState('computed_rating')
     const [pagination, setPagination] = useState(1);
   
@@ -28,7 +29,7 @@ export function SearchGames() {
             })
         
         const url = `https://api.gamebrain.co/v1/games?${params}`;
-        console.log(url)
+        
         let isReq = false
        const gamesSearchedAPICall = () => fetch(url, {
             method: 'GET',
@@ -51,18 +52,7 @@ export function SearchGames() {
 
   
 
-    const handlePagination = useCallback((e: React.MouseEvent<HTMLElement>) => {
-        if ((e.target as HTMLInputElement).innerText === 'Next Page') { 
-            setSearchedGames([])
-            setPagination(pagination + 1)
-        } else {
-            if (pagination > 1) {
-                 setSearchedGames([])
-                setPagination(pagination - 1)
-                }
-        }
-      
-    },[pagination])
+   
 
 
     if (searchedGames.length !== 0) {
@@ -81,9 +71,12 @@ export function SearchGames() {
                         <EachSearchResult game={eachGame} key={eachGame.id} />    
                     ))}
                 </ul>
-                <div className="flex flex-row-reverse justify-around text-white text-2sm  mb-3  ml-auto mr-auto p-2 border-underline border-b-1 w-2/3">
-                    <button onClick={handlePagination}>Next Page</button>
-                    <button onClick={handlePagination}>Previous Page</button>
+                <div className="flex flex-row justify-around text-white text-2sm  mb-3  ml-auto mr-auto p-2 border-underline border-b-1 w-2/3">
+                    {
+                        array.map((number) => {
+                            return <button onClick={(e) => { setSearchedGames([]);setPagination(Number((e.target as HTMLInputElement).innerText)) }}>{number + pagination }</button>
+                     })
+                      }
                 </div>
             </>
         )

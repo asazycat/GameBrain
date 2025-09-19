@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     (async function () {
       return await fetch(`${localSiteDemo}/wp/v2/users/me`, { headers: { Authorization: `Bearer ${tokenObj.token}` } })
-    })().then((res) => res.json()).then((res) => { setUser({ id: res.id, name: res.name, description: res.description, slug: res.slug, avatar_urls: res.avatar_urls, favourite_games: res.favourite_games });  }).catch((err) => alert(`${err.message}`))
+    })().then((res) => res.json()).then((res) => { setUser({ id: res.id, name: res.name, description: res.description, slug: res.slug, avatar_urls: res.avatar_urls, favourite_games: res.favourite_games });  }).catch((err) => console.log(`${err.message}`))
    
 }, [tokenObj])
 

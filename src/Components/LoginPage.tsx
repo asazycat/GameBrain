@@ -11,17 +11,18 @@ export default function LoginPage() {
   
     const login = useContext(LoginContextProvider)
     const { setTokenObj } = login
-    console.log(login)
+    console.log(login.tokenObj)
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault() 
-        await fetchTokenWpJWT().then((res) => res.json())
+        await fetchTokenWpJWT().then((res) => { console.log(res); return res.json() })
             .then((res) => { localStorage.setItem('tokenObj',JSON.stringify(res)); setTokenObj!(res) })
             .catch((err) => console.log(err.message))
 
         
     }
     
-    const fetchTokenWpJWT =  () => {
+    const fetchTokenWpJWT = () => {
+        console.log(`${localSiteDemo}/jwt-auth/v1/token`, username, password)
           return fetch(`${localSiteDemo}/jwt-auth/v1/token`, { method: 'POST',  headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({username: username, password: password}) })
            
         }

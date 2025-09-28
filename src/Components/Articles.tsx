@@ -6,13 +6,13 @@ import type { IPost } from "../interface"
 
 export default function Articles() {
 
-    const tokenObj = useContext(LoginContextProvider)
+    const login = useContext(LoginContextProvider)
     const [posts, setPosts] = useState<IPost[]>([])
     useEffect(() => {
           (async function () {
-      return await fetch(`${localSiteDemo}/wp/v2/posts?_embed`, { headers: { Authorization: `Bearer ${tokenObj.token}` } })
+      return await fetch(`${localSiteDemo}/wp/v2/posts?_embed`, { headers: { Authorization: `Bearer ${login.tokenObj.token}` } })
           })().then((res) => res.json()).then((res) => setPosts(res))
-    },[tokenObj.token])
+    },[login.tokenObj.token])
 
     return (
         <ul className="flex flex-col">{posts.map((eachPost: IPost) =>

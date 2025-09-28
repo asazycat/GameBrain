@@ -6,7 +6,7 @@ import localSiteDemo from "../../public/localSiteDemo"
 
 export default function FavouriteButton({id}: {id: string}) {
     
-    const tokenObj = useContext(LoginContextProvider)
+    const login = useContext(LoginContextProvider)
     const user = useContext(UserContextProvider)
      const [isFav, setIsFav] = useState(user.favourite_games.includes(id))
     const handleUpdateFavouriteGames = async () => {
@@ -15,7 +15,7 @@ export default function FavouriteButton({id}: {id: string}) {
             const updatedFavourites = [...user.favourite_games, id]
             user.favourite_games = updatedFavourites
             await fetch(`${localSiteDemo}/wp/v2/users/me`, {
-                method: `POST`, headers: { "Content-Type": "application/json", Authorization: `Bearer ${tokenObj.token}` }, body: JSON.stringify({
+                method: `POST`, headers: { "Content-Type": "application/json", Authorization: `Bearer ${login.tokenObj.token}` }, body: JSON.stringify({
                     favourite_games: updatedFavourites,
                 })
             }).then((res) => res.json()).then((res) => { console.log(res);  setIsFav(true)}).catch((err) => alert(err.message))
@@ -23,7 +23,7 @@ export default function FavouriteButton({id}: {id: string}) {
            const updatedFavourites = user.favourite_games.filter((eachId) => eachId !== id)
             user.favourite_games = updatedFavourites
             await fetch(`${localSiteDemo}/wp/v2/users/me`, {
-                method: `POST`, headers: { "Content-Type": "application/json", Authorization: `Bearer ${tokenObj.token}` }, body: JSON.stringify({
+                method: `POST`, headers: { "Content-Type": "application/json", Authorization: `Bearer ${login.tokenObj.token}` }, body: JSON.stringify({
                     favourite_games:  updatedFavourites,
                 })
             }).then((res) => res.json()).then((res) => { console.log(res);  setIsFav(false)}).catch((err) => alert(err.message))

@@ -8,7 +8,6 @@ import Articles from "./Components/Articles"
 import User from "./Components/User"
 import Users  from "./Components/Users"
 import SignUp from "./Components/SignUp"
-import LoginPage from "./Components/LoginPage"
 export const router = createBrowserRouter([{
     path: '/',
     element: <LayoutComponent/>,

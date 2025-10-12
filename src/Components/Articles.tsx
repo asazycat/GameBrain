@@ -10,9 +10,9 @@ export default function Articles() {
     const [posts, setPosts] = useState<IPost[]>([])
     useEffect(() => {
           (async function () {
-      return await fetch(`${localSiteDemo}/wp/v2/posts?_embed`, { headers: { Authorization: `Bearer ${login.tokenObj.token}` } })
+      return await fetch(`${localSiteDemo}/wp/v2/posts?_embed`, { headers: { Authorization: `Bearer ${login.token}` } })
           })().then((res) => res.json()).then((res) => setPosts(res))
-    },[login.tokenObj.token])
+    },[login.token])
 
     return (
         <ul className="flex flex-col">{posts.map((eachPost: IPost) =>

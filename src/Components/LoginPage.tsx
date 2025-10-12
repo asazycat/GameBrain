@@ -1,17 +1,14 @@
-import {useContext, useState, } from "react"
+import { useState, type Dispatch, type SetStateAction, } from "react"
 import localSiteDemo from '../../public/localSiteDemo'
-import { LoginContextProvider } from "../Contexts/LoginContextProvider"
+import type { IToken } from "../interface"
 
 
-export default function LoginPage() {
+export default function LoginPage({setTokenObj}: {setTokenObj:Dispatch<SetStateAction<IToken>>}) {
     
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-  
-    const login = useContext(LoginContextProvider)
-    const { setTokenObj } = login
-    console.log(login.tokenObj)
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault() 
         await fetchTokenWpJWT().then((res) => { console.log(res); return res.json() })

@@ -17,7 +17,7 @@ export default function Header() {
             <SuggestGames/>
            
             <div className=" text-left size-fit">
-                {login.tokenObj.token ? <Profile /> : 'Login'}
+                 <Profile />
             </div>
         </header>
     )

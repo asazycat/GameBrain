@@ -8,9 +8,9 @@ export default function Users() {
     const [users, setUsers] = useState<IUser[]>([])
     useEffect(() => {
           (async function () {
-      return await fetch(`${localSiteDemo}/wp/v2/users`, { headers: { Authorization: `Bearer ${login.tokenObj.token}` } })
+      return await fetch(`${localSiteDemo}/wp/v2/users`, { headers: { Authorization: `Bearer ${login.token}` } })
           })().then((res) => res.json()).then((res) => { setUsers(res); })
-    },[login.tokenObj.token])
+    },[login.token])
 
     return (
         <ul>{users.map((eachUser: IUser) => <li>{eachUser.name}</li>) }</ul>

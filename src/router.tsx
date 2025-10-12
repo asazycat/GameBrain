@@ -27,10 +27,6 @@ export const router = createBrowserRouter([{
       
         },
         {
-            path: '/login',
-            element: <LoginPage/>
-        },
-        {
             path: '/games/:id',
             element: <EachGame />
             

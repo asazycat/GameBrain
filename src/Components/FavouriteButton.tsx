@@ -15,7 +15,7 @@ export default function FavouriteButton({id}: {id: string}) {
             const updatedFavourites = [...user.favourite_games, id]
             user.favourite_games = updatedFavourites
             await fetch(`${localSiteDemo}/wp/v2/users/me`, {
-                method: `POST`, headers: { "Content-Type": "application/json", Authorization: `Bearer ${login.tokenObj.token}` }, body: JSON.stringify({
+                method: `POST`, headers: { "Content-Type": "application/json", Authorization: `Bearer ${login.token}` }, body: JSON.stringify({
                     favourite_games: updatedFavourites,
                 })
             }).then((res) => res.json()).then((res) => { console.log(res);  setIsFav(true)}).catch((err) => alert(err.message))
@@ -23,7 +23,7 @@ export default function FavouriteButton({id}: {id: string}) {
            const updatedFavourites = user.favourite_games.filter((eachId) => eachId !== id)
             user.favourite_games = updatedFavourites
             await fetch(`${localSiteDemo}/wp/v2/users/me`, {
-                method: `POST`, headers: { "Content-Type": "application/json", Authorization: `Bearer ${login.tokenObj.token}` }, body: JSON.stringify({
+                method: `POST`, headers: { "Content-Type": "application/json", Authorization: `Bearer ${login.token}` }, body: JSON.stringify({
                     favourite_games:  updatedFavourites,
                 })
             }).then((res) => res.json()).then((res) => { console.log(res);  setIsFav(false)}).catch((err) => alert(err.message))

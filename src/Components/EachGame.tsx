@@ -123,7 +123,7 @@ export default function EachGame() {
                 <div className={`bg-[#000000b3] ${imgSize.length === 0 ? `hidden ${videoControl.current.controls = true}` : ` absolute w-9/10 min-sm:h-119/100 min-sm:w-9/10 ${videoControl.current.controls = false}`} `}>
                     <div className="m-auto h-full min-sm:flex flex-col m-auto justify-center">
                         <button className=" text-[1em] text-right" onClick={() => {setImageSize('')}}>X</button>
-                        <img src={imgSize} className='m-auto size-100'/> 
+                        <img src={imgSize} className='m-auto max-sm:size-100'/> 
                     </div>    
                 </div>
 

@@ -118,12 +118,12 @@ export default function EachGame() {
           
         </div>
 
-        <div className=" w-9/10 m-auto mt-5 p-2 text-white bg-[#1c2b2d] border-[#1c2b2d] rounded min-sm:p-0 min-sm:flex min-sm:flex-col-reverse">
+        <div className=" w-9/10 m-auto mt-5  pt-2 text-white bg-[#1c2b2d] border-[#1c2b2d] rounded min-sm:p-0 min-sm:flex min-sm:flex-col-reverse">
              <ul  className="flex flex-row:w-full  overflow-scroll border-[#1c2b2d] mt-5 mb-5 min-sm:grid min-sm:grid-cols-3 min-sm:overflow-hidden min-sm:m-auto min-md:w-full min-md:grid-cols-4">
-                <div className={`bg-[#000000b3] ${imgSize.length === 0 ? `hidden ${videoControl.current.controls = true}` : ` absolute min-sm:h-119/100 min-sm:w-9/10 ${videoControl.current.controls = false}`} `}>
+                <div className={`bg-[#000000b3] ${imgSize.length === 0 ? `hidden ${videoControl.current.controls = true}` : ` absolute w-9/10 min-sm:h-119/100 min-sm:w-9/10 ${videoControl.current.controls = false}`} `}>
                     <div className="m-auto h-full min-sm:flex flex-col m-auto justify-center">
                         <button className=" text-[1em] text-right" onClick={() => {setImageSize('')}}>X</button>
-                        <img src={imgSize} className='m-auto'/> 
+                        <img src={imgSize} className='m-auto size-100'/> 
                     </div>    
                 </div>
 

@@ -27,9 +27,9 @@ function App() {
    
     
   }, [tokenObj])
-  if (!tokenObj.token || !JSON.parse(localStorage.getItem('tokenObj')!)) { 
-    return <LoginPage setTokenObj={setTokenObj}/>
-  }
+  // if (!tokenObj.token || !JSON.parse(localStorage.getItem('tokenObj')!)) { 
+  //   return <LoginPage setTokenObj={setTokenObj}/>
+  // }
     return (
     <>
       <LoginContextProvider value={tokenObj}>

@@ -10,7 +10,7 @@ import { LoginContextProvider } from './Contexts/LoginContextProvider'
 import type { IToken, IUser } from './interface'
 import { UserContextProvider } from './Contexts/UserContextProvider'
 import localSiteDemo from '../public/localSiteDemo'
-import LoginPage from './Components/LoginPage'
+// import LoginPage from './Components/LoginPage'
 
 
 
@@ -18,6 +18,7 @@ function App() {
 
   
   const [tokenObj, setTokenObj] = useState<IToken>( JSON.parse(localStorage.getItem('tokenObj')!) ?? { token: '', user_name: '', user_nicename: '', user_display_name: '' })
+  console.log(setTokenObj)
   const [user, setUser] = useState<IUser>({id: '', name: '', description: '', slug: '', avatar_urls: { 24: '', 48: '', 96: ''},favourite_games: []})
   useEffect(() => {
    console.log('inside');

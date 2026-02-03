@@ -34,8 +34,8 @@ export default function EachArticle () {
         <>
             <h1>{eachArticle.title.rendered}</h1>
             <img src={eachArticle._embedded?.["wp:featuredmedia"]?.[0]!.source_url ?? placeholder} />
-            <p>{eachArticle.content.rendered}</p>
+            <p>{ReactHtmlParser(eachArticle.content.rendered)}</p>
         </>
-
-    ) 
+)
+    
 }

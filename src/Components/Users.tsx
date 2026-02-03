@@ -9,7 +9,7 @@ export default function Users() {
     const [users, setUsers] = useState<IUser[]>([])
     useEffect(() => {
           (async function () {
-      return await fetch(`${localSiteDemo}/wp/v2/users`, { headers: { Authorization: `Bearer ${login.token}` } })
+      return await fetch(`${localSiteDemo}/wp/v2/users?context=edit `, { headers: { Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vZ2FtZWJyYWluLmxvY2FsIiwiaWF0IjoxNzcwMDIyNzc4LCJuYmYiOjE3NzAwMjI3NzgsImV4cCI6MTc3MDYyNzU3OCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.ULlVWH3fBYh9hW4UCArjF1XItx6Q-7AHvr4lMLc76PY` } })
           })().then((res) => res.json()).then((res) => { console.log(res);setUsers(res); })
     },[login.token])
 

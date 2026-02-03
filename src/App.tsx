@@ -20,7 +20,6 @@ function App() {
   const [tokenObj, setTokenObj] = useState<IToken>( JSON.parse(localStorage.getItem('tokenObj')!) ?? { token: '', user_name: '', user_nicename: '', user_display_name: '' })
   const [user, setUser] = useState<IUser>({id: '', name: '', description: '', slug: '', avatar_urls: { 24: '', 48: '', 96: ''},favourite_games: []})
   useEffect(() => {
-   console.log(`${localSiteDemo}/wp/v2/users/me`);
       (async function () {
         return await fetch(`${localSiteDemo}/wp/v2/users/me`, { headers: { Authorization: `Bearer ${tokenObj.token}` } })
       })().then((res) => res.json()).then((res) => { setUser({ id: res.id, name: res.name, description: res.description, slug: res.slug, avatar_urls: res.avatar_urls, favourite_games: res.favourite_games }); }).catch((err) => alert(`${err.message}`))

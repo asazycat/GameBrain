@@ -110,3 +110,6 @@ Go to themes/active_theme/function.php inside wp-content folder  (You can check 
 -------------------------
 
 Save everything and restart local site. Otherwise make an account in Users of WP-admin or use the  WP-admin login details to log into BrainGame.
+
+
+ 

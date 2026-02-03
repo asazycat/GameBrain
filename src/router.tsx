@@ -7,7 +7,6 @@ import LayoutComponent from "./Components/LayoutComponent"
 import Articles from "./Components/Articles"
 import User from "./Components/User"
 import Users  from "./Components/Users"
-import SignUp from "./Components/SignUp"
 import EachArticle from "./Components/EachArticle"
 export const router = createBrowserRouter([{
     path: '/',
@@ -16,10 +15,6 @@ export const router = createBrowserRouter([{
         {
             index: true,
             element: <Homepage />
-        },
-        {
-            path: '/signup',
-            element: <SignUp/>
         },
         {
             path: '/games',

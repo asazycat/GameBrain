@@ -6,7 +6,7 @@ import SignUp from "./SignUp"
 
 export default function LoginPage({setTokenObj}: {setTokenObj:Dispatch<SetStateAction<IToken>>}) {
     
-    const [username, setUsername] = useState('')
+    const [username, setUsername] = useState('DemoUserAuthor')
     const [password, setPassword] = useState('')
     const [signUp, setSignUp] = useState(true)
 

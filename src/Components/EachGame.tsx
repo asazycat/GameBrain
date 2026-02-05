@@ -108,7 +108,7 @@ export default function EachGame() {
                     </div>
                 </div>
                 <div className="max-sm:hidden w-1/2">
-                        <video src={`${game.micro_trailer}`} ref={videoControl} className="w-full  border-2 text-center">Video not supported on this browser</video>
+                        <video src={`${game.micro_trailer}`} ref={videoControl} className="w-full  border-2 text-center" controls>Video not supported on this browser</video>
                      <p className="text-white  overflow-y-scroll h-1/2 min-sm:overflow-y-hidden ">{game.description}</p>
                 </div>
                 

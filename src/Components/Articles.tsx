@@ -14,7 +14,7 @@ export default function Articles() {
       return await fetch(`${localSiteDemo}/wp/v2/posts`, { headers: { Authorization: `Bearer ${login.token}` } })
           })().then((res) => res.json()).then((res) => setPosts(res))
     },[login.token])
-
+    console.log(JSON.stringify(posts))
     return (
         <ul className="flex flex-col">{posts.map((eachPost: IPost) =>
             <Link to={`${eachPost.id}`}>
@@ -27,3 +27,5 @@ export default function Articles() {
         </ul>
     )
 }
+
+

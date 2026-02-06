@@ -8,6 +8,7 @@ export default function FavouriteButton({id}: {id: string}) {
     
     const login = useContext(LoginContextProvider)
     const user = useContext(UserContextProvider)
+    console.log(user)
      const [isFav, setIsFav] = useState(user.favourite_games.includes(id))
     const handleUpdateFavouriteGames = async () => {
        

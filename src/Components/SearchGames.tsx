@@ -44,7 +44,7 @@ export function SearchGames() {
                 return response.json();
                     })
            .then(data => { if (!isReq) setSearchedGames(data.results) })
-        .catch(error => alert(`${error.message}, ${error.code}`));
+        .catch(error => alert(`${error.message}, ${error.code}, Out of Tokens`));
         gamesSearchedAPICall()
 
         return () => { isReq = true }

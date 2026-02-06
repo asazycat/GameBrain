@@ -1,30 +1,29 @@
-import { type FormEvent } from "react";
-// import localSiteDemo from "../../public/localSiteDemo";
-// import { LoginContextProvider } from "../Contexts/LoginContextProvider";
-// import { UserContextProvider } from "../Contexts/UserContextProvider";
+import { useContext, type FormEvent } from "react";
+import localSiteDemo from "../../public/localSiteDemo";
+import { LoginContextProvider } from "../Contexts/LoginContextProvider";
+import { UserContextProvider } from "../Contexts/UserContextProvider";
 
 export default function PostArticle() {
-    // const login = useContext(LoginContextProvider)
-    // const user = useContext(UserContextProvider)
-    // const post = {
-    //     'author': user.id,
-    //     'title': '',
-    //     'featured_image':'',
-    //     'content': '',
-    //     'status': 'publish'
-    // }
+    const login = useContext(LoginContextProvider)
+    const user = useContext(UserContextProvider)
+    const post: {'author': string, 'title':string, 'featured_image': any, 'content': string, 'status': string} = {
+        'author': user.id,
+        'title': '',
+        'featured_image':'',
+        'content': '',
+        'status': 'publish'
+    }
     
 
-    const handleSubmit = async (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-    //     const formData = new FormData(e.target)
-    //     for (let entry of formData.entries()) {
-    //         let key = entry[0]
-    //         post[key] = entry[1]
-    //     }
-    //         console.log(post)
-    // await fetch(`${localSiteDemo}/wp/v2/posts`, { headers: {'Content-Type': 'multipart/form-data', Authorization: `Bearer ${login.token}`, method: 'POST', body: JSON.stringify(post) } }
-    //       ).then((res) => res.json()).catch((err) => console.log(err))
+        const formData = new FormData(e.currentTarget)
+        for (const [key, value] of formData.entries()) {
+            post[key as keyof typeof post] = value;
+        }
+            console.log(post)
+    await fetch(`${localSiteDemo}/wp/v2/posts`, { method: 'POST', headers: {'Content-Type': 'application/json','Authorization': `Bearer ${login.token}` },body: JSON.stringify(post) }
+          ).then((res) => res.json()).catch((err) => console.log(err))
     }
 
     return (

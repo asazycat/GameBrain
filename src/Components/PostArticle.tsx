@@ -16,7 +16,7 @@ export default function PostArticle() {
     
 
     const handleSubmit = async (e: FormEvent) => {
-    //     e.preventDefault();
+        e.preventDefault();
     //     const formData = new FormData(e.target)
     //     for (let entry of formData.entries()) {
     //         let key = entry[0]

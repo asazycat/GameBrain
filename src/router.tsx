@@ -8,6 +8,7 @@ import Articles from "./Components/Articles"
 import User from "./Components/User"
 import Users  from "./Components/Users"
 import EachArticle from "./Components/EachArticle"
+import PostArticle from "./Components/PostArticle"
 export const router = createBrowserRouter([{
     path: '/',
     element: <LayoutComponent/>,
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([{
         {
             path: '/articles/:id',
             element: <EachArticle/>,
+        },
+        {
+            path: '/postArticle',
+            element: <PostArticle/>,
         },
         {
             path: '*',

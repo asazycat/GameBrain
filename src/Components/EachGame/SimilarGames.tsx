@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import apiKey from "../../../../public/apiKey";
-import type { IGame } from "../../../interface";
+import apiKey from "../../../public/apiKey";
+import type { IGame } from "../../interface";
 import { Link } from "react-router-dom";
 
 

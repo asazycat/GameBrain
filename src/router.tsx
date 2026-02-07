@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Homepage from "./Components/Homepage";
 import { SearchGames } from "./Components/Games/SearchGames";
-import EachGame from "./Components/Games/EachGame/EachGame";
+import EachGame from "./Components/EachGame/EachGame";
 import LayoutComponent from "./Components/LayoutComponent";
 import Articles from "./Components/Articles";
 import User from "./Components/User";

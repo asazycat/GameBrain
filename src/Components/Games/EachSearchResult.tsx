@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import type { IGame } from "../interface";
-import Rating from "./Rating";
-import ImageJPEG from '../assets/image-not-available.jpg'
+import type { IGame } from "../../interface";
+import Rating from "./EachGame/Rating";
+import ImageJPEG from '../../../src/assets/image-not-available.jpg'
 
 export default function EachSearchResult({ game }: {game: IGame}) {
     const { id, name, genre, rating, image } = game

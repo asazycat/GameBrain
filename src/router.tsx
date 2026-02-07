@@ -1,14 +1,16 @@
-import { createBrowserRouter } from "react-router-dom"
-import Homepage from "./Components/Homepage"
-import { SearchGames } from "./Components/SearchGames"
-import EachGame from "./Components/EachGame"
+import { createBrowserRouter } from "react-router-dom";
+import Homepage from "./Components/Homepage";
+import { SearchGames } from "./Components/Games/SearchGames";
+import EachGame from "./Components/Games/EachGame/EachGame";
+import LayoutComponent from "./Components/LayoutComponent";
+import Articles from "./Components/Articles";
+import User from "./Components/User";
+import Users  from "./Components/Users";
+import EachArticle from "./Components/EachArticle";
+import PostArticle from "./Components/PostArticle";
 
-import LayoutComponent from "./Components/LayoutComponent"
-import Articles from "./Components/Articles"
-import User from "./Components/User"
-import Users  from "./Components/Users"
-import EachArticle from "./Components/EachArticle"
-import PostArticle from "./Components/PostArticle"
+
+
 export const router = createBrowserRouter([{
     path: '/',
     element: <LayoutComponent/>,

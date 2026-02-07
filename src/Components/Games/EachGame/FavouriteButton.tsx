@@ -1,7 +1,7 @@
 import { useState, useContext } from "react"
-import { LoginContextProvider } from "../Contexts/LoginContextProvider"
-import { UserContextProvider } from "../Contexts/UserContextProvider"
-import localSiteDemo from "../../public/localSiteDemo"
+import { LoginContextProvider } from "../../../Contexts/LoginContextProvider"
+import { UserContextProvider } from "../../../Contexts/UserContextProvider"
+import localSiteDemo from "../../../../public/localSiteDemo"
 
 
 export default function FavouriteButton({id}: {id: string}) {

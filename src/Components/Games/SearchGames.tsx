@@ -1,13 +1,16 @@
-import {useEffect, useState } from "react"
-import apiKey from '../../public/apiKey'
-import type { IGame } from '../interface' 
-import EachSearchResult from "./EachSearchResult"
+import {useEffect, useState, Suspense } from "react"
+import apiKey from '../../../public/apiKey'
+import type { IGame } from '../../interface' 
+import React from "react";
+
 
 export function SearchGames() {
     const [searchedGames, setSearchedGames] = useState<IGame[]>([])
     const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     const [sort, setSort] = useState('computed_rating')
     const [pagination, setPagination] = useState(1);
+
+    const EachSearchResult = React.lazy(() => import("./EachSearchResult"))
   
     
     useEffect(() => {
@@ -55,9 +58,10 @@ export function SearchGames() {
    
 
 
-    if (searchedGames.length !== 0) {
+   
         return (
             <>
+            <Suspense fallback={ <h1>Loading...</h1>}>
                 <div className="border-2 bg-[#1c2b2d] text-white border-[#1c2b2d] mt-5 p-3 min-sm:w-9/10 min-sm:m-auto min-sm:mt-5 min-sm:rounded-2xl">
                     <label>Sort By: </label>
                     <select onChange={(e) => setSort(e.target.value)} >
@@ -78,12 +82,9 @@ export function SearchGames() {
                      })
                       }
                 </div>
+            </Suspense>
             </>
+            
         )
-    } else {
-
-        return (
-            <h1>Loading...</h1>
-        )
-    }
+    
 }

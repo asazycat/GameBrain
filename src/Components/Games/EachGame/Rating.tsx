@@ -1,4 +1,4 @@
-import type { IRating } from "../interface";
+import type { IRating } from "../../../interface";
 
 export default function Rating({ rating }: { rating: IRating }) {
    

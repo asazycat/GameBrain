@@ -10,7 +10,8 @@ import { LoginContextProvider } from './Contexts/LoginContextProvider'
 import type { IToken, IUser } from './interface'
 import { UserContextProvider } from './Contexts/UserContextProvider'
 import localSiteDemo from '../public/localSiteDemo'
-import LoginPage from './Components/LoginPage'
+import LoginPage from './Components/LoginIn/LoginPage'
+
 
 
 

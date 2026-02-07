@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import placeholder from '../../public/placeholder.jpg';
-import type { IPost } from "../interface";
+import placeholder from '../../assets/placeholder.jpg';
+import type { IPost } from "../../interface";
 
 export default function EachArticleResult({eachPost}: {eachPost: IPost}) {
     const {id, title, _embedded} = eachPost

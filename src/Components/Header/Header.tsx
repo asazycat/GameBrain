@@ -2,9 +2,10 @@
 
 
 
-import Navigation from "./Navigation";
+import Navigation from "../Navigation";
 import Profile from "./Profile";
-import SuggestGames from "./SuggestGames";
+import SuggestGames from "../SearchBar/SuggestGames";
+
 
 
 export default function Header() {

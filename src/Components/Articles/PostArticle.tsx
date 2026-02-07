@@ -1,7 +1,7 @@
 import { useContext, type FormEvent } from "react";
-import localSiteDemo from "../../public/localSiteDemo";
-import { LoginContextProvider } from "../Contexts/LoginContextProvider";
-import { UserContextProvider } from "../Contexts/UserContextProvider";
+import localSiteDemo from "../../../public/localSiteDemo";
+import { LoginContextProvider } from "../../Contexts/LoginContextProvider";
+import { UserContextProvider } from "../../Contexts/UserContextProvider";
 
 export default function PostArticle() {
     const login = useContext(LoginContextProvider)

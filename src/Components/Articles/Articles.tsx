@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
-import { LoginContextProvider } from "../Contexts/LoginContextProvider"
-import localSiteDemo from "../../public/localSiteDemo"
-import type { IPost } from "../interface"
+import { LoginContextProvider } from "../../Contexts/LoginContextProvider"
+import localSiteDemo from "../../../public/localSiteDemo"
+import type { IPost } from "../../interface"
 import EachArticleResult from "./EachArticleResult"
 import { Link } from "react-router-dom"
 

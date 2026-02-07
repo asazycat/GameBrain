@@ -61,7 +61,7 @@ export function SearchGames() {
    
         return (
             <>
-            <Suspense fallback={ <h1>Loading...</h1>}>
+            
                 <div className="border-2 bg-[#1c2b2d] text-white border-[#1c2b2d] mt-5 p-3 min-sm:w-9/10 min-sm:m-auto min-sm:mt-5 min-sm:rounded-2xl">
                     <label>Sort By: </label>
                     <select onChange={(e) => setSort(e.target.value)} >
@@ -71,9 +71,11 @@ export function SearchGames() {
                     </select>
                </div>
                 <ul className="grid gap-10  min-sm:grid min-sm:grid-cols-5 m-10  min-sm:m-auto min-sm:mt-5 min-sm:w-9/10 min-sm:h-1/2">
+                    <Suspense fallback={ <h1>Loading...</h1>}>
                     {(searchedGames).map((eachGame) => (
                         <EachSearchResult game={eachGame} key={eachGame.id} />    
                     ))}
+                    </Suspense>
                 </ul>
                 <div className="flex flex-row justify-around text-white text-2sm  mb-3  ml-auto mr-auto p-2 border-underline border-b-1 w-2/3">
                     {
@@ -82,7 +84,7 @@ export function SearchGames() {
                      })
                       }
                 </div>
-            </Suspense>
+     
             </>
             
         )

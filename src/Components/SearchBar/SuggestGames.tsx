@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import type { IGame } from "../interface"
-import apiKey from "../../public/apiKey"
+import type { IGame } from "../../interface"
+import apiKey from "../../../public/apiKey"
 import { Link } from "react-router-dom"
 export default function SuggestGames() {
     const [query, setQuery] = useState('')

@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from "react"
-import localSiteDemo from "../../public/localSiteDemo"
-import { LoginContextProvider } from "../Contexts/LoginContextProvider"
+import localSiteDemo from "../../../public/localSiteDemo"
+import { LoginContextProvider } from "../../Contexts/LoginContextProvider"
 import { Link } from "react-router-dom"
-import type { IUser } from "../interface"
+import type { IUser } from "../../interface"
 
 export default function Users() {
    const login = useContext(LoginContextProvider)

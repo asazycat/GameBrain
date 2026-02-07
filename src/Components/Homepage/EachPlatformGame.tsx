@@ -1,4 +1,4 @@
-import type { IGame } from "../interface";
+import type { IGame } from "../../interface";
 
 export default function EachPlatformGame({ game }: { game: IGame }) {
     const { id, image } = game

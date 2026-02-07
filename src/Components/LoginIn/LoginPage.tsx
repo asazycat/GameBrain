@@ -1,6 +1,6 @@
 import { useState, type Dispatch, type SetStateAction, } from "react"
-import localSiteDemo from '../../public/localSiteDemo'
-import type { IToken } from "../interface"
+import localSiteDemo from '../../../public/localSiteDemo'
+import type { IToken } from "../../interface"
 import SignUp from "./SignUp"
 
 

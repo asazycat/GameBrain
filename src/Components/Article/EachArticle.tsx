@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
-import localSiteDemo from "../../public/localSiteDemo";
-import { LoginContextProvider } from "../Contexts/LoginContextProvider";
-import type { IPost } from "../interface";
-import placeholder from '../../public/placeholder.jpg'
+import localSiteDemo from "../../../public/localSiteDemo";
+import { LoginContextProvider } from "../../Contexts/LoginContextProvider";
+import type { IPost } from "../../interface";
+import placeholder from '../../assets/placeholder.jpg'
 import ReactHtmlParser from 'html-react-parser'; 
 
 export default function EachArticle () {

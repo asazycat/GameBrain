@@ -1,13 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import Homepage from "./Components/Homepage";
+import Homepage from "./Components/Homepage/Homepage";
 import { SearchGames } from "./Components/Games/SearchGames";
-import EachGame from "./Components/EachGame/EachGame";
+import EachGame from "./Components/Game/EachGame";
 import LayoutComponent from "./Components/LayoutComponent";
-import Articles from "./Components/Articles";
-import User from "./Components/User";
-import Users  from "./Components/Users";
-import EachArticle from "./Components/EachArticle";
-import PostArticle from "./Components/PostArticle";
+
+import PostArticle from "./Components/Articles/PostArticle";
+import EachArticle from "./Components/Article/EachArticle";
+import Articles from "./Components/Articles/Articles";
+import User from "./Components/Users/User";
+import Users from "./Components/Users/Users";
 
 
 

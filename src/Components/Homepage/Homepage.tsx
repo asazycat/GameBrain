@@ -1,5 +1,5 @@
 
-import hero from '../../public/hero.jpg' 
+import hero from '../../assets/hero.jpg' 
 
 
 

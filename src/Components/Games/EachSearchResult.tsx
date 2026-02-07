@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { IGame } from "../../interface";
-import Rating from "../EachGame/Rating";
+import Rating from "../Game/Rating";
 import ImageJPEG from '../../../src/assets/image-not-available.jpg'
 
 export default function EachSearchResult({ game }: {game: IGame}) {

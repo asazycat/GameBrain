@@ -4,7 +4,7 @@ import apiKey from "../../public/apiKey"
 import type { IGame } from "../interface"
 import Rating from "./Rating"
 import SimilarGames from "./SimilarGames"
-// import FavouriteButton from "./FavouriteButton"
+import FavouriteButton from "./FavouriteButton"
 
 
 
@@ -99,10 +99,10 @@ export default function EachGame() {
                     <img src={`${game.image}`} alt={`${game.name}`} className="size-40 min-sm:size-75 m-auto" />
                     <div className="w-full text-center">
                         <h1 className="text-sm text-white min-sm:text-2xl">{game.name}</h1>
-                         {/* <div className="max-sm:hidden"><FavouriteButton id={id ?? ''}/></div> */}
+                         <div className="max-sm:hidden"><FavouriteButton id={id ?? ''}/></div>
                     <ul className=" text-[#d2eb47] min-sm:grid m-2 min-sm:grid-cols-3  ">{game.themes.map((theme) => <li>{theme.name}</li>)}</ul>
                         <ul className="text-[#d2eb47] min-sm:grid m-2 min-sm:grid-cols-3 ">{game.play_modes.map((play_mode) => <li>{play_mode.name}</li>)}</ul>
-                        {/* <div className="min-sm:hidden"><FavouriteButton id={id ?? ''}/></div> */}
+                        <div className="min-sm:hidden"><FavouriteButton id={id ?? ''}/></div>
                          <ul className={`${game.tags.length === 0 ? 'm-auto' : ''} flex  max-sm:hidden `}>{game.genres.map((eachGenre) => <li className="mt-2 ml-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 ">{eachGenre.name}</li>)}</ul>
                         <ul className="flex p-2">{game.tags.map((tag) => <li className="mt-2 ml-2 border-2 bg-[#77858f] text-[#d2eb47] border-[#77858f] rounded-3xl p-1 flex max-sm:hidden ">{tag.name}</li>) }</ul>
                     </div>

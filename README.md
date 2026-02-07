@@ -70,7 +70,7 @@ Under location (the select boxes): Show this field group if → User Form → is
 
 Go to themes/active_theme/function.php inside wp-content folder  (You can check which theme is active in Apperance/Themes on Wp-admin page). Select the functions.php and add the code below at the very end for custom fields into users 
 ---------------------------------
-# <?php
+
 # // Add this to your theme's functions.php
 
 # /**

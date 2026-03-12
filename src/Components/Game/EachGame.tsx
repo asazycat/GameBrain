@@ -4,7 +4,7 @@ import apiKey from "../../../public/apiKey"
 import type { IGame } from "../../interface"
 import Rating from "./Rating"
 import SimilarGames from "./SimilarGames"
-import FavouriteButton from "./FavouriteButton"
+// import FavouriteButton from "./FavouriteButton"
 
 
 
